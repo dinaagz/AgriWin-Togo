@@ -1,0 +1,78 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "Logos": {
+      "files": {
+        "agriwin-icone.svg": {
+          "blob": "1209b41b41c1e2783079dfd4311e27ef",
+          "name": "agriwin-icone.svg",
+          "size": 58849,
+          "type": "image/svg+xml"
+        },
+        "agriwin-logo-horizontal.svg": {
+          "blob": "f318d50e5df901f03e1749714688e122",
+          "name": "agriwin-logo-horizontal.svg",
+          "size": 59305,
+          "type": "image/svg+xml"
+        },
+        "agriwin-logo-inverse.svg": {
+          "blob": "715288cbeb2687f908541b49bd576c41",
+          "name": "agriwin-logo-inverse.svg",
+          "size": 19343,
+          "type": "image/svg+xml"
+        },
+        "agriwin-logo-mono.svg": {
+          "blob": "2b273ec8592c83182a1ecb48e47a943f",
+          "name": "agriwin-logo-mono.svg",
+          "size": 19275,
+          "type": "image/svg+xml"
+        },
+        "agriwin-logo-principal.svg": {
+          "blob": "fa90adda451e21882d3cc5e2e883ad80",
+          "name": "agriwin-logo-principal.svg",
+          "size": 59294,
+          "type": "image/svg+xml"
+        },
+        "agriwin-monogramme.svg": {
+          "blob": "70dce2a1be615669fb39da3c00d7e241",
+          "name": "agriwin-monogramme.svg",
+          "size": 18936,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Logos",
+      "order": [
+        "agriwin-logo-principal.svg",
+        "agriwin-logo-horizontal.svg",
+        "agriwin-icone.svg",
+        "agriwin-logo-mono.svg",
+        "agriwin-logo-inverse.svg",
+        "agriwin-monogramme.svg"
+      ],
+      "tile": "l"
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-09-22T20:10:00Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "groups": [
+    "Logos"
+  ],
+  "lastChange": {
+    "at": "2026-09-22T21:05:00Z",
+    "by": "Dina",
+    "via": "Cowork",
+    "note": "Symbole corrigé : le plant et la chèvre d'origine sont vectorisés, plus redessinés."
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "AgriWin",
+  "sections": {},
+  "title": "AgriWin Togo Design System"
+}

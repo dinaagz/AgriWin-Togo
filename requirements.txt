@@ -1,0 +1,7 @@
+pillow
+numpy
+scipy
+potracer
+python-pptx
+playwright
+pypdfium2

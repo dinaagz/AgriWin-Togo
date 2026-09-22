@@ -1,0 +1,16 @@
+<!-- @dsCard group="Typographie" height=108 subtitle="Pastille de surtitre, deux fonds" -->
+<div class="aw-root" id="root" style="padding:24px;"></div>
+<script>
+(function () {
+  var A = window.AgriWin, r = document.getElementById("root");
+  var row = document.createElement("div");
+  row.style.cssText = "display:flex;gap:12px;flex-wrap:wrap;align-items:center";
+  row.appendChild(A.Eyebrow({ label: "Notre engagement" }));
+  row.appendChild(A.Eyebrow({ label: "Catalogue", icon: "leaf" }));
+  r.appendChild(row);
+  var dark = document.createElement("div");
+  dark.style.cssText = "margin-top:14px;background:var(--green-900);padding:14px;border-radius:var(--radius-md);display:inline-block";
+  dark.appendChild(A.Eyebrow({ label: "Sur aplat vert", onDark: true }));
+  r.appendChild(dark);
+})();
+</script>

@@ -1,0 +1,904 @@
+/* AgriWin Togo — brand book A3 paysage (420 × 297 mm). */
+@font-face { font-family: Poppins; src: local("Poppins"); }
+
+:root {
+/*TOKENS*/
+}
+
+@page { size: 420mm 297mm; margin: 0; }
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--white);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: var(--ink-900);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  position: relative;
+  width: 420mm;
+  height: 297mm;
+  padding: 16mm 20mm 14mm;
+  background: var(--white);
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+  display: flex;
+  flex-direction: column;
+}
+.page:last-child { page-break-after: auto; }
+
+/* ---------- En-tête et pied de page ---------- */
+.ph {
+  display: flex;
+  align-items: flex-end;
+  gap: 10mm;
+  padding-bottom: 5mm;
+  border-bottom: 0.5mm solid var(--border-soft);
+  flex: none;
+}
+.ph img { height: 11mm; width: auto; }
+.ph-title { flex: 1; }
+.ph-title span {
+  display: block;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3mm;
+  letter-spacing: .28em;
+  color: var(--gold-700);
+  margin-bottom: 1.5mm;
+}
+.ph-title h2 {
+  margin: 0;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 8.4mm;
+  line-height: 1;
+  color: var(--green-950);
+}
+.ph-num {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.6mm;
+  color: var(--ink-500);
+}
+
+.pb { flex: 1; padding-top: 8mm; min-height: 0; display: flex; flex-direction: column; }
+.pb > .two, .pb > .three, .pb > .variants, .pb > .stationery,
+.pb > .field-kit, .pb > .donts, .pb > .values, .pb > .comps,
+.pb > .swatches, .pb > .fonts, .pb > .icongrid { flex: 1; }
+
+.pf {
+  flex: none;
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.4mm solid var(--border-soft);
+  padding-top: 3mm;
+  font-size: 2.9mm;
+  color: var(--ink-500);
+}
+.pf span:last-child { font-family: "Playfair Display", Georgia, serif; font-style: italic; }
+
+/* ---------- Couverture ---------- */
+.cover { padding: 0; flex-direction: row; }
+.cover-art {
+  position: absolute;
+  inset: 0 0 0 46%;
+  background: var(--white);
+  overflow: hidden;
+}
+.cb { position: absolute; }
+.cb1 { left: 0; top: -20mm; width: 62mm; height: 337mm; background: var(--green-900); }
+.cb2 { left: 65mm; top: 0; width: 46mm; height: 158mm; background: var(--green-700); border-radius: 0 0 6mm 6mm; }
+.cb3 { left: 65mm; top: 161mm; width: 46mm; height: 136mm; background: var(--gold-500); border-radius: 6mm 6mm 0 0; }
+.cb4 { left: 114mm; top: -20mm; width: 120mm; height: 337mm; background: var(--green-100); }
+.cover-symbol {
+  position: absolute;
+  left: 128mm; top: 148mm;
+  height: 96mm;
+}
+.cover-text {
+  position: relative;
+  z-index: 2;
+  align-self: flex-end;
+  padding: 0 0 48mm 26mm;
+  width: 46%;
+}
+.cover-kicker {
+  display: block;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.2mm;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold-700);
+  margin-bottom: 8mm;
+}
+.cover-text h1 {
+  margin: 0;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 40mm;
+  line-height: .93;
+  letter-spacing: -.025em;
+  color: var(--green-950);
+}
+.cover-sign {
+  margin: 5mm 0 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 7mm;
+  color: var(--gold-700);
+}
+.cover-sub {
+  margin: 10mm 0 0;
+  font-size: 4mm;
+  line-height: 1.6;
+  color: var(--ink-700);
+  max-width: 120mm;
+}
+.cover-foot {
+  position: absolute;
+  left: 26mm; right: 26mm; bottom: 14mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 3mm;
+  color: var(--ink-500);
+  z-index: 3;
+}
+.cover-foot span:first-child { font-family: Poppins, Arial, sans-serif; font-weight: 600; }
+
+/* ---------- Blocs de texte ---------- */
+h3 {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 5.8mm;
+  color: var(--green-950);
+  margin: 0 0 3mm;
+}
+h3 + h3 { margin-top: 6mm; }
+p { margin: 0 0 3.6mm; font-size: 4.3mm; line-height: 1.6; color: var(--ink-700); }
+.lead { font-size: 5.2mm; line-height: 1.55; color: var(--ink-700); max-width: 240mm; margin-bottom: 8mm; }
+.foot-note { font-size: 3.6mm; line-height: 1.5; color: var(--ink-500); margin-top: 4mm; }
+code {
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: .9em;
+  background: var(--bg-soft);
+  padding: 0 1mm;
+  border-radius: 1mm;
+  color: var(--green-800);
+}
+em { font-family: "Playfair Display", Georgia, serif; font-style: italic; color: var(--gold-700); }
+
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 14mm; height: 100%; }
+.two-wide-left { grid-template-columns: 1.25fr 1fr; }
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10mm; }
+.three-uneven { grid-template-columns: 1fr 1fr 1.05fr; height: 100%; }
+.pb > .three-uneven > div { display: flex; flex-direction: column; }
+.pb > .three-uneven > div > .shapes { flex: 1; justify-content: space-around; }
+
+ul.ticks { list-style: none; margin: 0 0 4mm; padding: 0; }
+ul.ticks li {
+  position: relative;
+  padding-left: 7mm;
+  margin-bottom: 3.4mm;
+  font-size: 4.2mm;
+  line-height: 1.5;
+  color: var(--ink-700);
+}
+ul.ticks li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 2.1mm;
+  width: 3mm; height: 3mm;
+  border-radius: 50%;
+  background: var(--green-700);
+}
+
+/* ---------- Tableaux ---------- */
+table { width: 100%; border-collapse: collapse; font-size: 3.9mm; }
+.kv th, .kv td { text-align: left; padding: 2.9mm 3.5mm; vertical-align: top; line-height: 1.45; }
+.kv thead th {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.2mm;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--green-900);
+}
+.kv tbody th {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  color: var(--green-950);
+  width: 34%;
+}
+.kv tbody td { color: var(--ink-700); }
+.kv tbody tr:nth-child(even) { background: var(--bg-soft); }
+.kv tbody tr { border-bottom: .3mm solid var(--border-soft); }
+
+/* ---------- Sommaire ---------- */
+.summary {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 16mm;
+}
+.summary li {
+  display: grid;
+  grid-template-columns: 10mm 1fr;
+  gap: 0 3mm;
+  padding: 2.6mm 0;
+  border-bottom: .3mm solid var(--border-soft);
+  break-inside: avoid;
+}
+.sum-n {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 4mm;
+  color: var(--gold-700);
+  grid-row: span 2;
+}
+.sum-t { font-family: Poppins, Arial, sans-serif; font-weight: 600; font-size: 4mm; color: var(--green-950); }
+.sum-d { font-size: 3.1mm; color: var(--ink-500); line-height: 1.4; }
+
+/* ---------- Piliers ---------- */
+.pillar {
+  background: var(--bg-soft);
+  border: .4mm solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 16mm 13mm;
+  min-height: 138mm;
+}
+.pillar-k {
+  display: block;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.8mm;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  margin-bottom: 6mm;
+}
+.pillar p { font-size: 5mm; line-height: 1.65; color: var(--ink-900); }
+.pillar-gold { background: var(--green-950); border-color: var(--green-950); }
+.pillar-gold .pillar-k { color: var(--gold-400); }
+.pillar-gold p { color: rgba(255, 255, 255, .88); }
+.promise {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 8mm !important;
+  color: var(--gold-400) !important;
+  margin-bottom: 5mm !important;
+}
+.note-band {
+  margin-top: auto;
+  background: var(--green-50);
+  border-radius: var(--radius-lg);
+  padding: 8mm 10mm;
+}
+.proofs, .rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8mm; }
+.rules { grid-template-columns: repeat(4, 1fr); gap: 6mm; }
+.proofs > div, .rules > div { display: flex; flex-direction: column; gap: 1.5mm; }
+.proofs strong, .rules strong {
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 4.2mm;
+  color: var(--green-800);
+}
+.proofs span, .rules span { font-size: 3.8mm; line-height: 1.45; color: var(--ink-700); }
+
+/* ---------- Valeurs ---------- */
+.values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8mm; }
+.value {
+  background: var(--green-50);
+  border: .4mm solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 12mm 10mm;
+  min-height: 150mm;
+  display: flex;
+  flex-direction: column;
+}
+.value-n {
+  display: flex; align-items: center; justify-content: center;
+  width: 14mm; height: 14mm;
+  border-radius: 50%;
+  background: var(--green-900);
+  color: var(--white);
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 5.6mm;
+  margin-bottom: 7mm;
+}
+.value h3 { font-size: 6.6mm; margin-bottom: 3.5mm; }
+.value p { font-size: 4.2mm; }
+.value .value-proof { margin-top: auto; }
+.value-proof {
+  border-top: .3mm solid var(--border-soft);
+  padding-top: 3mm;
+  color: var(--green-800) !important;
+  font-style: italic;
+}
+
+.quote-block {
+  background: var(--green-950);
+  border-radius: var(--radius-lg);
+  padding: 10mm;
+  margin-bottom: 8mm;
+}
+.quote {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 6.4mm !important;
+  line-height: 1.5;
+  color: var(--white) !important;
+}
+.cite { font-size: 3.9mm !important; color: var(--gold-400) !important; margin: 0 !important; }
+.chips { display: flex; flex-wrap: wrap; gap: 2.5mm; margin-bottom: 6mm; }
+.chips span {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.8mm;
+  color: var(--green-900);
+  background: var(--green-100);
+  padding: 2mm 4mm;
+  border-radius: var(--radius-pill);
+}
+
+/* ---------- Cercles de territoire ---------- */
+.rings { display: flex; flex-direction: column; gap: 4mm; margin-bottom: 6mm; }
+.ring { border-radius: var(--radius-md); padding: 8mm 9mm; }
+.ring strong { display: block; font-family: Poppins, Arial, sans-serif; font-size: 4.8mm; margin-bottom: 1mm; }
+.ring span { font-size: 3.9mm; line-height: 1.5; }
+.ring-1 { background: var(--green-900); color: var(--white); }
+.ring-1 span { color: rgba(255, 255, 255, .85); }
+.ring-2 { background: var(--green-100); color: var(--green-950); }
+.ring-2 span { color: var(--ink-700); }
+.ring-3 { background: var(--bg-soft); border: .4mm solid var(--border-soft); color: var(--green-950); }
+.ring-3 span { color: var(--ink-700); }
+
+/* ---------- Do / Don't d'écriture ---------- */
+.do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; }
+.do, .dont { border-radius: var(--radius-lg); padding: 11mm 12mm; }
+.do { background: var(--green-50); border: .4mm solid var(--green-400); }
+.dont { background: var(--bg-soft); border: .4mm solid var(--border-soft); }
+.do h3, .dont h3 { margin-bottom: 4mm; }
+.do ul, .dont ul { list-style: none; margin: 0; padding: 0; }
+.do li, .dont li {
+  position: relative;
+  padding-left: 8mm;
+  margin-bottom: 4.5mm;
+  font-size: 4.2mm;
+  line-height: 1.5;
+  color: var(--ink-700);
+}
+.do li::before { content: "✓"; position: absolute; left: 0; color: var(--green-700); font-weight: 700; }
+.dont li::before { content: "✕"; position: absolute; left: 0; color: #B3261E; font-weight: 700; }
+
+/* ---------- Logo ---------- */
+.logo-stage {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  height: 100%;
+}
+.variants { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9mm; height: 100%; }
+.variants figure { margin: 0; display: flex; flex-direction: column; }
+.vbox {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-soft);
+  border: .4mm solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 6mm;
+  min-height: 52mm;
+}
+.vbox-dark { background: var(--green-900); border-color: var(--green-900); padding: 0; }
+.vbox-dark img { max-width: 100%; max-height: 100%; }
+.vbox img { max-width: 78%; max-height: 40mm; }
+.variants figcaption { font-size: 3mm; line-height: 1.45; color: var(--ink-500); padding-top: 3mm; }
+.variants figcaption strong {
+  display: block;
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 3.4mm;
+  color: var(--green-950);
+  margin-bottom: 1mm;
+}
+
+.clearspace { margin-top: 5mm; flex: 1; display: flex; }
+.pb > .two > div { display: flex; flex-direction: column; }
+.cs-frame {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: .5mm dashed var(--green-500);
+  padding: 20mm;
+  background: var(--bg-soft);
+  border-radius: 2mm;
+}
+.cs-inner { border: .4mm solid var(--border-soft); background: var(--white); padding: 4mm; }
+.cs-inner img { width: 100%; }
+.cs-label {
+  position: absolute;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 3.4mm;
+  color: var(--green-700);
+}
+.cs-top { top: 5mm; left: 50%; }
+.cs-bottom { bottom: 5mm; left: 50%; }
+.cs-left { left: 5.5mm; top: 50%; }
+.cs-right { right: 5.5mm; top: 50%; }
+
+.scale-row { display: flex; align-items: flex-end; gap: 12mm; margin-top: auto; padding-top: 8mm; }
+.scale-row > div { display: flex; flex-direction: column; gap: 2mm; align-items: flex-start; }
+.scale-row span { font-size: 3.2mm; color: var(--ink-500); }
+
+.donts { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr 1fr; gap: 8mm; }
+.dont-card { margin: 0; display: flex; flex-direction: column; }
+.dt-box {
+  position: relative;
+  flex: 1;
+  min-height: 34mm;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-soft);
+  border: .4mm solid var(--border-soft);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  padding: 4mm;
+}
+.dt-box img { max-width: 76%; max-height: 30mm; }
+.dt-cross {
+  position: absolute; right: 2mm; top: 2mm;
+  width: 6mm; height: 6mm;
+  border-radius: 50%;
+  background: #B3261E;
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.2mm; font-weight: 700;
+}
+.dt-crowd { display: flex; align-items: center; gap: 1mm; }
+.dt-crowd img { max-width: 60%; }
+.dt-crowd span {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 4mm;
+  color: #B3261E;
+  line-height: 1.1;
+}
+.dt-busy {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    repeating-linear-gradient(45deg, var(--green-600) 0 4mm, var(--gold-500) 4mm 8mm);
+}
+.dt-busy img { max-width: 70%; }
+.donts figcaption { font-size: 3.3mm; line-height: 1.45; color: var(--ink-500); padding-top: 2.5mm; }
+.donts figcaption strong {
+  display: block;
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 3.9mm;
+  color: var(--green-950);
+  margin-bottom: .8mm;
+}
+
+/* ---------- Nuanciers ---------- */
+.swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; align-content: start; }
+.sw-tight { grid-template-columns: repeat(2, 1fr); gap: 4mm; margin-bottom: 4mm; }
+.sw { border-radius: var(--radius-md); overflow: hidden; border: .3mm solid var(--border-soft); }
+.sw-chip {
+  height: 30mm;
+  display: flex; align-items: flex-end;
+  padding: 3mm;
+}
+.sw-chip span {
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 2.9mm;
+  letter-spacing: .04em;
+}
+.sw-meta { padding: 2.5mm 3mm 3mm; background: var(--white); }
+.sw-meta strong {
+  display: block;
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 3.3mm;
+  color: var(--green-950);
+  margin-bottom: 1mm;
+}
+.sw-meta span { font-size: 3.1mm; line-height: 1.4; color: var(--ink-500); display: block; }
+
+.gradients { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-top: 6mm; }
+.gradients > div {
+  height: 24mm;
+  border-radius: var(--radius-md);
+  display: flex; align-items: flex-end;
+  padding: 3mm 4mm;
+}
+.gradients span { font-size: 2.9mm; color: var(--white); font-family: Poppins, Arial, sans-serif; font-weight: 500; }
+
+/* ---------- Contrastes ---------- */
+.contrast { font-size: 2.9mm; }
+.contrast th, .contrast td { padding: 1.5mm 2.5mm; text-align: left; border-bottom: .25mm solid var(--border-soft); }
+.contrast thead th {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 2.6mm;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--white);
+  background: var(--green-900);
+}
+.contrast .num { font-family: "DejaVu Sans Mono", monospace; text-align: right; }
+.contrast code { font-size: 2.6mm; }
+.dot {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 11mm; height: 6mm;
+  border-radius: 1.5mm;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3mm;
+  border: .25mm solid var(--border-soft);
+}
+.ratio-bar { display: flex; gap: 2mm; margin-bottom: 7mm; }
+.ratio-bar span {
+  padding: 5mm 3mm;
+  border-radius: var(--radius-sm);
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3mm;
+  text-align: center;
+}
+
+/* ---------- Typographie ---------- */
+.fonts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9mm; }
+.font-card {
+  border: .4mm solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 10mm;
+  background: var(--bg-soft);
+  display: flex;
+  flex-direction: column;
+}
+.font-spec {
+  font-size: 46mm;
+  line-height: 1;
+  color: var(--green-900);
+  margin-bottom: 4mm;
+}
+.font-card h3 { font-size: 6.6mm; margin-bottom: 2.5mm; }
+.font-role { font-size: 4mm; color: var(--ink-700); margin-bottom: 6mm; }
+.font-glyphs { font-size: 4.4mm !important; line-height: 1.9; color: var(--green-950) !important; word-break: break-all; }
+.font-weights { font-size: 3.3mm !important; color: var(--ink-500) !important; margin: auto 0 0 !important;
+  padding-top: 6mm; border-top: .3mm solid var(--border-soft); }
+
+.pb > .typescale { flex: 1; }
+.typescale { font-size: 3.6mm; height: 100%; }
+.typescale th, .typescale td { padding: 3mm 3.5mm; text-align: left; border-bottom: .25mm solid var(--border-soft); vertical-align: middle; }
+.typescale thead th {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.1mm;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--white);
+  background: var(--green-900);
+}
+.ts-name { font-family: "DejaVu Sans Mono", monospace; font-size: 3.4mm; color: var(--green-800); }
+.ts-sample { color: var(--green-950); white-space: nowrap; }
+.ts-use { font-size: 3.3mm; color: var(--ink-500); line-height: 1.4; }
+.typescale .num { font-family: "DejaVu Sans Mono", monospace; text-align: center; }
+
+.spec-demo {
+  background: var(--bg-soft);
+  border-radius: var(--radius-md);
+  padding: 7mm;
+  margin-bottom: 5mm;
+}
+.spec-dark { background: linear-gradient(135deg, var(--green-900), var(--green-600)); }
+.sd-eyebrow {
+  display: inline-block;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 2.8mm;
+  letter-spacing: .08em;
+  color: var(--green-900);
+  background: var(--green-100);
+  padding: 1.5mm 3.5mm;
+  border-radius: var(--radius-pill);
+  margin-bottom: 3mm;
+}
+.sd-h2 { font-family: Poppins, Arial, sans-serif; font-weight: 700; font-size: 7mm; line-height: 1.2; color: var(--green-950); margin: 0 0 2.5mm; }
+.sd-h3 { font-family: Poppins, Arial, sans-serif; font-weight: 600; font-size: 4.6mm; color: var(--green-950); margin: 0 0 2mm; }
+.sd-lead { font-size: 3.6mm !important; line-height: 1.55; margin: 0 !important; }
+.sd-body { font-size: 3.3mm !important; margin: 0 !important; }
+
+/* ---------- Icônes ---------- */
+.icongrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5mm; }
+.ic {
+  border: .35mm solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 4mm;
+  text-align: center;
+  background: var(--white);
+}
+.ic-box {
+  display: flex; align-items: center; justify-content: center;
+  height: 14mm;
+  color: var(--green-800);
+}
+.ic strong {
+  display: block;
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 2.7mm;
+  color: var(--green-950);
+  margin-bottom: .8mm;
+}
+.ic span { font-size: 2.5mm; color: var(--ink-500); line-height: 1.3; }
+.icon-treat { display: flex; flex-direction: column; gap: 4mm; margin-bottom: 4mm; }
+.icon-treat > div { display: flex; gap: 4mm; align-items: center; }
+.icon-treat span { font-size: 3.1mm; color: var(--ink-700); line-height: 1.45; }
+.icon-treat span strong { display: block; font-family: Poppins, Arial, sans-serif; color: var(--green-950); font-size: 3.4mm; }
+.aw-icon-demo {
+  width: 15mm; height: 15mm; flex: none;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--green-700), var(--green-500));
+  display: flex; align-items: center; justify-content: center;
+}
+.aw-icon-plain {
+  width: 15mm; height: 15mm; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  border: .35mm solid var(--border-soft);
+  border-radius: var(--radius-md);
+}
+
+/* ---------- Photographie ---------- */
+.veil-demo { position: relative; flex: 1; min-height: 92mm; border-radius: var(--radius-lg); overflow: hidden; }
+.veil-img {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 25% 30%, var(--green-400) 0 12%, transparent 13%),
+    radial-gradient(circle at 62% 62%, var(--green-500) 0 16%, transparent 17%),
+    radial-gradient(circle at 84% 24%, var(--green-600) 0 10%, transparent 11%),
+    linear-gradient(160deg, #7FA86B, #4C7A3A 55%, #35602C);
+}
+.veil-grad { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 61, 23, .55), rgba(15, 61, 23, .82)); }
+.veil-text { position: absolute; left: 8mm; bottom: 8mm; right: 8mm; }
+.veil-badge {
+  display: inline-block;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 2.8mm;
+  color: var(--white);
+  background: rgba(255, 255, 255, .15);
+  border: .25mm solid rgba(255, 255, 255, .3);
+  padding: 1.5mm 4mm;
+  border-radius: var(--radius-pill);
+  margin-bottom: 3mm;
+}
+.veil-text h2 { font-family: Poppins, Arial, sans-serif; font-weight: 800; font-size: 9mm; color: var(--white); margin: 0 0 2mm; }
+.veil-text p { color: rgba(255, 255, 255, .92) !important; font-size: 3.4mm; margin: 0; }
+
+/* ---------- Formes ---------- */
+.shapes { display: flex; flex-direction: column; gap: 4mm; margin-bottom: 4mm; }
+.shape { display: grid; grid-template-columns: 22mm 1fr; gap: 0 5mm; align-items: center; }
+.shape-box { width: 22mm; height: 20mm; background: var(--green-700); grid-row: span 3; }
+.shape-white { background: var(--white); border: .25mm solid var(--border-soft); border-radius: 3mm; }
+.shape strong { font-family: "DejaVu Sans Mono", monospace; font-size: 3.4mm; color: var(--green-950); }
+.shape > span { font-size: 3.1mm; color: var(--ink-500); line-height: 1.4; }
+.shape-use { color: var(--ink-700) !important; }
+.spacing { display: flex; flex-direction: column; gap: 2.2mm; margin-bottom: 7mm; }
+.sp { display: flex; align-items: center; gap: 3mm; }
+.sp-bar { height: 4mm; background: var(--green-500); border-radius: 1mm; }
+.sp-val { font-family: "DejaVu Sans Mono", monospace; font-size: 3.1mm; color: var(--ink-500); }
+
+/* ---------- Composants ---------- */
+.comps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5mm; margin-bottom: 9mm; align-content: space-between; }
+.comp {
+  border: .35mm solid var(--border-soft);
+  border-left: 1.2mm solid var(--green-700);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 3.5mm 4mm;
+  background: var(--white);
+}
+.comp strong { display: block; font-family: Poppins, Arial, sans-serif; font-size: 3.9mm; color: var(--green-950); margin-bottom: 1mm; }
+.comp span { font-size: 3.2mm; color: var(--ink-500); line-height: 1.4; }
+.demo-strip {
+  display: flex; flex-wrap: wrap; gap: 5mm; align-items: center;
+  background: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  padding: 8mm;
+}
+.d-btn {
+  font-family: Poppins, Arial, sans-serif; font-weight: 600; font-size: 3.4mm;
+  padding: 3.4mm 7mm; border-radius: var(--radius-pill);
+}
+.d-primary { background: var(--gold-500); color: var(--green-950); }
+.d-green { background: var(--green-700); color: var(--white); }
+.d-outline { border: .6mm solid var(--green-700); color: var(--green-700); }
+.d-eyebrow {
+  font-family: Poppins, Arial, sans-serif; font-weight: 600; font-size: 2.9mm;
+  letter-spacing: .08em; color: var(--green-900); background: var(--green-100);
+  padding: 1.6mm 4mm; border-radius: var(--radius-pill);
+}
+.d-tag {
+  font-family: Poppins, Arial, sans-serif; font-weight: 600; font-size: 2.9mm;
+  color: var(--green-900); background: var(--green-100);
+  padding: 1.2mm 3.5mm; border-radius: var(--radius-pill);
+}
+.d-chip {
+  font-family: Poppins, Arial, sans-serif; font-size: 3.1mm;
+  border: .4mm solid var(--border-soft); color: var(--ink-700);
+  padding: 2mm 4.5mm; border-radius: var(--radius-pill); background: var(--white);
+}
+.d-chip-on { background: var(--green-700); color: var(--white); border-color: var(--green-700); }
+.d-badge {
+  font-family: Poppins, Arial, sans-serif; font-weight: 700; font-size: 2.7mm;
+  letter-spacing: .03em; background: var(--gold-500); color: var(--green-950);
+  padding: 1.4mm 3.5mm; border-radius: var(--radius-pill);
+}
+
+/* ---------- Papeterie ---------- */
+.stationery { display: grid; grid-template-columns: 1.1fr 1fr 1.1fr; gap: 10mm; height: 100%; }
+.stationery figure { margin: 0; display: flex; flex-direction: column; }
+.stationery figcaption { font-size: 2.9mm; line-height: 1.45; color: var(--ink-500); padding-top: 4mm; }
+.stationery figcaption strong, .field-kit figcaption strong, .social figcaption strong {
+  display: block; font-family: Poppins, Arial, sans-serif; font-size: 3.4mm;
+  color: var(--green-950); margin-bottom: 1mm;
+}
+.biz { display: flex; flex-direction: column; gap: 5mm; }
+.biz-front, .biz-back {
+  width: 85mm; height: 55mm;
+  border-radius: 2mm;
+  border: .35mm solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--white);
+  position: relative;
+}
+.biz-back { flex-direction: column; align-items: flex-start; justify-content: center; padding: 7mm; }
+.biz-name { font-family: Poppins, Arial, sans-serif; font-weight: 700; font-size: 4.4mm; color: var(--green-950); }
+.biz-role { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-size: 3.2mm; color: var(--ink-500); margin-bottom: 3.5mm; }
+.biz-lines { display: flex; flex-direction: column; gap: 1mm; }
+.biz-lines span { font-size: 3mm; color: var(--ink-700); }
+.biz-logo { position: absolute; right: 6mm; bottom: 6mm; width: 26mm; }
+.letter {
+  width: 100%; aspect-ratio: 210 / 297;
+  border: .35mm solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  background: var(--white);
+  padding: 9mm;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.letter-logo { width: 42%; margin-bottom: 9mm; }
+.letter-lines { display: flex; flex-direction: column; gap: 2.6mm; flex: 1; }
+.letter-lines span { height: 1.2mm; background: var(--border-soft); border-radius: .6mm; }
+.l-long { width: 100%; } .l-mid { width: 74%; } .l-short { width: 42%; }
+.letter-foot {
+  border-top: 1mm solid var(--gold-500);
+  padding-top: 3mm;
+  font-size: 2.5mm;
+  color: var(--ink-500);
+  text-align: center;
+}
+.sig {
+  display: flex; gap: 5mm; align-items: flex-start;
+  border-left: 1mm solid var(--green-700);
+  padding: 4mm 0 4mm 5mm;
+}
+.sig img { width: 34mm; }
+.sig div { display: flex; flex-direction: column; gap: 1mm; }
+.sig strong { font-family: Poppins, Arial, sans-serif; font-size: 3.6mm; color: var(--green-950); }
+.sig em { font-size: 3mm; }
+.sig span { font-size: 2.9mm; color: var(--ink-700); }
+.sig-tag { font-family: "Playfair Display", Georgia, serif; font-style: italic; color: var(--gold-700) !important; }
+
+/* ---------- Terrain ---------- */
+.field-kit { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8mm; height: 100%; }
+.field-kit figure { margin: 0; display: flex; flex-direction: column; justify-content: center; }
+.field-kit figcaption { margin-top: auto; }
+.field-kit figcaption { font-size: 2.8mm; line-height: 1.45; color: var(--ink-500); padding-top: 3.5mm; }
+.signboard {
+  background: var(--green-900);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.sb-body { padding: 5mm; display: flex; flex-direction: column; gap: 1.5mm; }
+.sb-body strong { font-family: Poppins, Arial, sans-serif; font-size: 4.2mm; color: var(--white); }
+.sb-body span { font-size: 3mm; color: rgba(255, 255, 255, .85); }
+.sb-tel { font-family: Poppins, Arial, sans-serif; font-weight: 700; font-size: 4.6mm !important; color: var(--gold-400) !important; }
+.plant-tag {
+  width: 52mm; min-height: 104mm;
+  border: .4mm solid var(--border-soft);
+  border-top: 3mm solid var(--green-700);
+  border-radius: 2mm;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  padding: 5mm 4mm;
+  display: flex; flex-direction: column; gap: 2.5mm; align-items: center; text-align: center;
+}
+.plant-tag strong { font-family: Poppins, Arial, sans-serif; font-size: 3.8mm; color: var(--green-950); }
+.plant-tag span { font-size: 2.8mm; color: var(--ink-700); }
+.pt-lot { font-family: "DejaVu Sans Mono", monospace; font-size: 2.5mm !important; color: var(--ink-500) !important; margin-top: auto; }
+.shirt { display: flex; justify-content: center; width: 100%; }
+.shirt-body {
+  position: relative;
+  width: 76%; margin: 0 auto; aspect-ratio: 4/5;
+  background: var(--green-900);
+  border-radius: 3mm 3mm 5mm 5mm;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding-top: 22mm;
+  box-shadow: var(--shadow-sm);
+}
+.shirt-body::before, .shirt-body::after {
+  content: ""; position: absolute; top: 0;
+  width: 22%; height: 34%;
+  background: var(--green-900);
+}
+.shirt-body::before { left: -20%; border-radius: 4mm 0 6mm 4mm; }
+.shirt-body::after { right: -20%; border-radius: 0 4mm 4mm 6mm; }
+.shirt-collar {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 30%; height: 7mm; background: var(--white);
+  border-radius: 0 0 6mm 6mm;
+}
+.van { position: relative; padding-bottom: 8mm; margin-top: 4mm; }
+.van-body {
+  background: var(--white);
+  border: .5mm solid var(--border-soft);
+  border-radius: 3mm 8mm 2mm 2mm;
+  aspect-ratio: 5/3;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3mm;
+  box-shadow: var(--shadow-sm);
+}
+.van-tel { font-size: 2.6mm; color: var(--ink-700); }
+.van-wheel { position: absolute; bottom: 0; width: 13mm; height: 13mm; border-radius: 50%; background: var(--green-950); }
+.w1 { left: 14%; } .w2 { right: 14%; }
+
+/* ---------- Social ---------- */
+.social { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+.social figure { margin: 0; }
+.social figcaption { font-size: 2.8mm; line-height: 1.45; color: var(--ink-500); padding-top: 3mm; }
+.post {
+  aspect-ratio: 1;
+  background: var(--green-900);
+  border-radius: var(--radius-md);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.post-media { flex: 1; padding: 7mm; display: flex; flex-direction: column; justify-content: center; gap: 3mm; }
+.post-eyebrow {
+  align-self: flex-start;
+  font-family: Poppins, Arial, sans-serif; font-weight: 600; font-size: 2.6mm;
+  letter-spacing: .08em; color: var(--white);
+  background: rgba(255, 255, 255, .15); padding: 1.4mm 3.5mm; border-radius: var(--radius-pill);
+}
+.post-media h3 { color: var(--white); font-size: 6mm; margin: 0; }
+.post-price { font-family: Poppins, Arial, sans-serif; font-weight: 700; font-size: 6.5mm; color: var(--gold-500); }
+.post-price em { font-family: Inter, Arial, sans-serif; font-style: normal; font-size: 3mm; color: rgba(255, 255, 255, .8); }
+.post-foot {
+  display: flex; align-items: center; gap: 3mm;
+  padding: 4mm 7mm; border-top: .3mm solid rgba(255, 255, 255, .15);
+}
+.post-foot span { font-size: 3mm; color: rgba(255, 255, 255, .8); }
+.cover-fb { aspect-ratio: 1640/624; border-radius: var(--radius-md); overflow: hidden; }
+.avatars { display: flex; align-items: flex-end; gap: 5mm; }
+
+.contact-final {
+  margin-top: 6mm;
+  background: var(--green-950);
+  border-radius: var(--radius-lg);
+  padding: 7mm;
+  display: flex; flex-direction: column; gap: 1.5mm;
+}
+.contact-final strong { font-family: Poppins, Arial, sans-serif; font-size: 4.4mm; color: var(--white); }
+.contact-final span { font-size: 3.1mm; color: rgba(255, 255, 255, .85); }
+
+.field-kit figure > *:not(figcaption) { margin-block: auto; }

@@ -1,0 +1,218 @@
+/* AgriWin Togo — feuille de composants.
+   Valeurs reprises telles quelles de css/style.css du site AgriWin Togo.
+   Chargée après tokens.css : toutes les couleurs passent par les tokens. */
+
+.aw-root { font-family: var(--font-body); color: var(--ink-900); line-height: 1.6; }
+.aw-root *, .aw-root *::before, .aw-root *::after { box-sizing: border-box; }
+.aw-root h1, .aw-root h2, .aw-root h3, .aw-root h4 {
+  font-family: var(--font-head); color: var(--green-950); line-height: 1.2; margin: 0 0 .6em;
+}
+.aw-root p { margin: 0 0 1em; color: var(--ink-700); }
+.aw-root a { color: inherit; text-decoration: none; }
+.aw-root ul { list-style: none; margin: 0; padding: 0; }
+
+/* ---------- Bouton ---------- */
+.aw-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  font-family: var(--font-head); font-weight: 600; font-size: 15px;
+  padding: 13px 26px; border-radius: var(--radius-pill);
+  border: 2px solid transparent; cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease, color .2s ease;
+  white-space: nowrap;
+}
+.aw-btn:active { transform: scale(.97); }
+.aw-btn:focus-visible { outline: 3px solid var(--green-700); outline-offset: 2px; }
+.aw-btn--primary { background: var(--gold-500); color: var(--green-950); box-shadow: var(--shadow-sm); }
+.aw-btn--primary:hover { background: var(--gold-400); box-shadow: var(--shadow-md); }
+.aw-btn--green { background: var(--green-700); color: var(--white); box-shadow: var(--shadow-sm); }
+.aw-btn--green:hover { background: var(--green-600); box-shadow: var(--shadow-md); }
+.aw-btn--outline { border-color: var(--white); color: var(--white); background: transparent; }
+.aw-btn--outline:hover { background: var(--white); color: var(--green-800); }
+.aw-btn--outline-green { border-color: var(--green-700); color: var(--green-700); background: transparent; }
+.aw-btn--outline-green:hover { background: var(--green-700); color: var(--white); }
+.aw-btn--call { background: var(--white); color: var(--green-800); border-color: var(--green-700); }
+.aw-btn--call:hover { background: var(--green-700); color: var(--white); }
+.aw-btn--whatsapp { background: var(--whatsapp); color: var(--green-950); box-shadow: var(--shadow-sm); }
+.aw-btn--whatsapp:hover { background: #1ebe59; box-shadow: var(--shadow-md); }
+.aw-btn--sm { padding: 9px 18px; font-size: 13.5px; }
+.aw-btn--block { width: 100%; }
+.aw-btn[disabled], .aw-btn[aria-disabled="true"] {
+  opacity: .5; cursor: not-allowed; box-shadow: none; transform: none;
+}
+.aw-btn svg { width: 18px; height: 18px; flex: none; }
+.aw-btn-group { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+/* ---------- Surtitre ---------- */
+.aw-eyebrow {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font-family: var(--font-head); font-weight: 600; font-size: 13px;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--green-900); background: var(--green-100);
+  padding: 6px 14px; border-radius: var(--radius-pill);
+}
+.aw-eyebrow--onDark { background: rgba(255, 255, 255, .15); color: var(--white); }
+
+/* ---------- Titre de section ---------- */
+.aw-section-head { max-width: 680px; }
+.aw-section-head--center { margin-inline: auto; text-align: center; }
+.aw-section-head h2 { font-size: 38px; margin: 14px 0 .4em; }
+.aw-section-head p { font-size: 17px; margin: 0; }
+.aw-accent { font-family: var(--font-accent); font-style: italic; font-weight: 500; color: var(--gold-700); }
+
+/* ---------- Carte ---------- */
+.aw-card {
+  background: var(--white); border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+  display: flex; flex-direction: column;
+}
+.aw-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.aw-card__media { aspect-ratio: 4/3; overflow: hidden; background: var(--green-100); position: relative; }
+.aw-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.aw-card__body { padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.aw-card__body h3 { font-size: 18px; margin-bottom: 2px; }
+.aw-card__body p { font-size: 14.5px; margin-bottom: 0; }
+.aw-tag {
+  display: inline-flex; align-self: flex-start;
+  font-family: var(--font-head); font-size: 12px; font-weight: 600;
+  color: var(--green-900); background: var(--green-100);
+  padding: 4px 12px; border-radius: var(--radius-pill);
+}
+
+/* ---------- Carte service ---------- */
+.aw-service { padding: 30px 26px; text-align: left; }
+.aw-service h3 { font-size: 19px; }
+.aw-icon {
+  width: 58px; height: 58px; border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--green-700), var(--green-500));
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px; box-shadow: var(--shadow-sm);
+}
+.aw-icon svg { width: 28px; height: 28px; color: var(--white); }
+.aw-service__link {
+  margin-top: auto; font-family: var(--font-head); font-weight: 600; font-size: 14px;
+  color: var(--green-700); display: inline-flex; align-items: center; gap: 6px;
+}
+.aw-service__link svg { width: 16px; height: 16px; transition: transform .2s ease; }
+.aw-service:hover .aw-service__link svg { transform: translateX(4px); }
+
+/* ---------- Carte valeur ---------- */
+.aw-value {
+  background: var(--green-50); border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md); padding: 24px; text-align: center;
+}
+.aw-value .aw-icon { margin: 0 auto 14px; }
+.aw-value h3 { font-size: 19px; }
+.aw-value p { font-size: 14.5px; margin: 0; }
+
+/* ---------- Carte produit ---------- */
+.aw-product__badge {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--gold-500); color: var(--green-950);
+  font-family: var(--font-head); font-weight: 700; font-size: 11.5px;
+  padding: 5px 12px; border-radius: var(--radius-pill);
+  text-transform: uppercase; letter-spacing: .03em;
+}
+.aw-product__price { display: flex; align-items: baseline; gap: 6px; margin-top: 4px; }
+.aw-product__price strong { font-family: var(--font-head); font-size: 20px; color: var(--green-800); }
+.aw-product__price span { font-size: 12.5px; color: var(--ink-500); }
+.aw-product__actions { display: flex; gap: var(--space-2); margin-top: 10px; }
+.aw-product__actions .aw-btn { flex: 1; }
+
+/* ---------- Bande de chiffres ---------- */
+.aw-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5);
+  background: linear-gradient(135deg, var(--green-900), var(--green-700));
+  border-radius: var(--radius-lg); padding: 10px 20px;
+}
+.aw-stat { text-align: center; padding: 20px 10px; }
+.aw-stat strong { display: block; font-family: var(--font-head); font-weight: 700; font-size: 34px; color: var(--gold-500); }
+.aw-stat span { font-size: 13.5px; color: rgba(255, 255, 255, .85); }
+
+/* ---------- Bandeau d'appel à l'action ---------- */
+.aw-cta {
+  border-radius: var(--radius-lg); padding: 50px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 30px; flex-wrap: wrap;
+  background: linear-gradient(135deg, var(--green-900), var(--green-600));
+  color: var(--white);
+}
+.aw-cta h2 { color: var(--white); margin-bottom: 8px; font-size: 30px; }
+.aw-cta p { color: rgba(255, 255, 255, .9); margin: 0; }
+.aw-cta__text { max-width: 560px; }
+
+/* ---------- Champ de formulaire ---------- */
+.aw-field { display: flex; flex-direction: column; gap: 6px; }
+.aw-field label { font-family: var(--font-head); font-weight: 600; font-size: 13.5px; color: var(--ink-900); }
+.aw-field input, .aw-field select, .aw-field textarea {
+  padding: 13px 16px; border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-soft); background: var(--bg-soft);
+  font-family: var(--font-body); font-size: 14.5px; color: var(--ink-900); resize: vertical;
+}
+.aw-field input:focus, .aw-field select:focus, .aw-field textarea:focus {
+  outline: none; border-color: var(--green-500); background: var(--white);
+  box-shadow: 0 0 0 3px rgba(78, 159, 61, .25);
+}
+.aw-field__note { font-size: 12.5px; color: var(--ink-500); }
+.aw-field--error input, .aw-field--error select, .aw-field--error textarea { border-color: #B3261E; }
+.aw-field__error { font-size: 12.5px; color: #B3261E; font-weight: 500; }
+.aw-field input[disabled], .aw-field textarea[disabled] { opacity: .55; cursor: not-allowed; }
+.aw-success {
+  background: var(--green-100); border: 1px solid var(--green-400);
+  color: var(--green-900); padding: 16px 18px; border-radius: var(--radius-sm);
+  font-weight: 500; display: flex; align-items: center; gap: 10px;
+}
+
+/* ---------- Puce de filtre ---------- */
+.aw-chip {
+  border: 1.5px solid var(--border-soft); background: var(--white);
+  padding: 8px 16px; border-radius: var(--radius-pill); cursor: pointer;
+  font-family: var(--font-head); font-size: 13.5px; font-weight: 500;
+  color: var(--ink-700); transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+.aw-chip:hover { border-color: var(--green-500); }
+.aw-chip[aria-pressed="true"] { background: var(--green-700); color: var(--white); border-color: var(--green-700); }
+.aw-chip:focus-visible { outline: 3px solid var(--green-700); outline-offset: 2px; }
+
+/* ---------- Carte de contact ---------- */
+.aw-contact { background: var(--green-950); color: var(--white); border-radius: var(--radius-lg); padding: 34px; }
+.aw-contact h3 { color: var(--white); }
+.aw-contact__line { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+.aw-contact__line:last-child { margin-bottom: 0; }
+.aw-contact__ic {
+  width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, .12);
+  display: flex; align-items: center; justify-content: center; flex: none;
+}
+.aw-contact__ic svg { width: 19px; height: 19px; color: var(--gold-400); }
+.aw-contact__line strong { display: block; font-family: var(--font-head); font-size: 14.5px; margin-bottom: 2px; }
+.aw-contact__line span { font-size: 14px; color: rgba(255, 255, 255, .85); }
+
+/* ---------- Étapes numérotées ---------- */
+.aw-steps { display: grid; gap: var(--space-6); }
+.aw-step { display: flex; gap: 18px; align-items: flex-start; }
+.aw-step__num {
+  width: 42px; height: 42px; flex: none; border-radius: 50%;
+  background: var(--green-900); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-weight: 700;
+}
+.aw-step h3 { font-size: 17px; margin-bottom: 4px; }
+.aw-step p { font-size: 14.5px; margin: 0; }
+
+/* ---------- Badge de hero ---------- */
+.aw-hero-badge {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  background: rgba(255, 255, 255, .15); border: 1px solid rgba(255, 255, 255, .3);
+  color: var(--white); padding: 7px 16px; border-radius: var(--radius-pill);
+  font-family: var(--font-head); font-size: 13px; font-weight: 600;
+}
+.aw-hero-badge svg { width: 14px; height: 14px; }
+
+/* ---------- Bloc logo ---------- */
+.aw-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); }
+.aw-brand img { height: 52px; width: auto; }
+.aw-brand__text { display: flex; flex-direction: column; line-height: 1.15; }
+.aw-brand__text strong { font-size: 19px; color: var(--green-900); font-weight: 700; }
+.aw-brand__text span { font-family: var(--font-accent); font-style: italic; font-size: 12px; color: var(--ink-500); }
+.aw-brand--onDark .aw-brand__text strong { color: var(--white); }
+.aw-brand--onDark .aw-brand__text span { color: rgba(255, 255, 255, .6); }

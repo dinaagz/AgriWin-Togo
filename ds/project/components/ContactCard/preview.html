@@ -1,0 +1,16 @@
+<!-- @dsCard group="Contenu" height=300 subtitle="Coordonnées sur encre de marque" -->
+<div class="aw-root" id="root" style="padding:24px;"></div>
+<script>
+(function () {
+  var A = window.AgriWin, r = document.getElementById("root");
+  r.appendChild(A.ContactCard({
+    title: "Nous joindre",
+    lines: [
+      { icon: "phone", label: "Téléphone & WhatsApp", value: "+228 96 63 82 00" },
+      { icon: "mail", label: "E-mail", value: "agriwintogo@gmail.com" },
+      { icon: "pin", label: "Adresse", value: "Kégué, Togo" },
+      { icon: "calendar", label: "Horaires", value: "Lun–Sam : 8h – 18h" }
+    ]
+  }));
+})();
+</script>

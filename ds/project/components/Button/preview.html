@@ -1,0 +1,19 @@
+<!-- @dsCard group="Actions" height=176 subtitle="Six variantes, deux tailles" -->
+<div class="aw-root" id="root" style="padding:24px;"></div>
+<script>
+(function () {
+  var A = window.AgriWin, r = document.getElementById("root");
+  var row = document.createElement("div"); row.style.cssText = "display:flex;flex-wrap:wrap;gap:12px;align-items:center";
+  [["primary","Demander un devis"],["green","Voir le catalogue"],["outline-green","En savoir plus"],
+   ["call","Appeler"],["whatsapp","WhatsApp"]].forEach(function (v) {
+    row.appendChild(A.Button({ variant: v[0], label: v[1] }));
+  });
+  r.appendChild(row);
+  var row2 = document.createElement("div"); row2.style.cssText = "display:flex;flex-wrap:wrap;gap:12px;align-items:center";
+  row2.style.marginTop = "16px";
+  row2.appendChild(A.Button({ variant: "green", label: "Taille sm", size: "sm" }));
+  row2.appendChild(A.Button({ variant: "primary", label: "Avec icône", icon: "phone" }));
+  row2.appendChild(A.Button({ variant: "green", label: "Désactivé", disabled: true }));
+  r.appendChild(row2);
+})();
+</script>

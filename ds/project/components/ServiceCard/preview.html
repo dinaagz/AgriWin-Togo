@@ -1,0 +1,16 @@
+<!-- @dsCard group="Contenu" height=300 subtitle="Grille de trois services" -->
+<div class="aw-root" id="root" style="padding:24px;"></div>
+<script>
+(function () {
+  var A = window.AgriWin, r = document.getElementById("root");
+  var g = document.createElement("div");
+  g.style.cssText = "display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px";
+  [["leaf","Expertise & conseil","Diagnostic de vos terrains et recommandations personnalisées."],
+   ["school","Formation agricole","Sessions pratiques pour particuliers, coopératives et porteurs de projets."],
+   ["users","Accompagnement en élevage","Conseil et fourniture de sujets pour démarrer votre élevage."]
+  ].forEach(function (s) {
+    g.appendChild(A.ServiceCard({ icon: s[0], title: s[1], text: s[2], linkLabel: "En savoir plus" }));
+  });
+  r.appendChild(g);
+})();
+</script>

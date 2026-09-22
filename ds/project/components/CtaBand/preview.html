@@ -1,0 +1,15 @@
+<!-- @dsCard group="Mise en page" height=240 subtitle="Bandeau de fin de page" -->
+<div class="aw-root" id="root" style="padding:24px;"></div>
+<script>
+(function () {
+  var A = window.AgriWin, r = document.getElementById("root");
+  r.appendChild(A.CtaBand({
+    title: "Un projet agricole en tête ?",
+    text: "Décrivez-nous votre besoin : nos experts vous répondent avec une solution adaptée et un devis clair.",
+    actions: [
+      { variant: "whatsapp", label: "Discuter sur WhatsApp" },
+      { variant: "outline", label: "Remplir le formulaire" }
+    ]
+  }));
+})();
+</script>

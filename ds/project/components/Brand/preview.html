@@ -1,0 +1,19 @@
+<!-- @dsCard group="Identité" height=180 subtitle="Nom et signature, deux fonds" -->
+<div class="aw-root" id="root" style="padding:24px;"></div>
+<script>
+(function () {
+  var A = window.AgriWin, r = document.getElementById("root");
+  var wrap = document.createElement("div");
+  wrap.style.cssText = "display:flex;gap:28px;flex-wrap:wrap;align-items:center";
+  wrap.appendChild(A.Brand({}));
+  var dark = document.createElement("div");
+  dark.style.cssText = "background:var(--green-950);padding:18px 22px;border-radius:var(--radius-md)";
+  dark.appendChild(A.Brand({ onDark: true }));
+  wrap.appendChild(dark);
+  r.appendChild(wrap);
+  var note = document.createElement("p");
+  note.style.cssText = "margin-top:14px;font-size:13px;color:var(--ink-500)";
+  note.textContent = "Le symbole se passe en propriété logo ; les fichiers sont dans le groupe Logos.";
+  r.appendChild(note);
+})();
+</script>

@@ -1,0 +1,15 @@
+<!-- @dsCard group="Contenu" height=268 subtitle="Les quatre valeurs de la marque" -->
+<div class="aw-root" id="root" style="padding:24px;"></div>
+<script>
+(function () {
+  var A = window.AgriWin, r = document.getElementById("root");
+  var g = document.createElement("div");
+  g.style.cssText = "display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px";
+  [["shield","Fiabilité","Des engagements tenus et des délais respectés."],
+   ["target","Qualité","Des plants sélectionnés selon des standards exigeants."],
+   ["users","Proximité","Une équipe joignable par téléphone et WhatsApp."],
+   ["leaf","Ouverture","Clientèle locale et internationale, même exigence."]
+  ].forEach(function (v) { g.appendChild(A.ValueCard({ icon: v[0], title: v[1], text: v[2] })); });
+  r.appendChild(g);
+})();
+</script>

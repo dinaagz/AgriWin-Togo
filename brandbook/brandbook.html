@@ -1,0 +1,1898 @@
+<!DOCTYPE html><html lang='fr'><head><meta charset='utf-8'>
+<title>AgriWin Togo — Brand Book</title>
+<style>/* AgriWin Togo — brand book A3 paysage (420 × 297 mm). */
+@font-face { font-family: Poppins; src: local("Poppins"); }
+
+:root {
+    --green-950: #0f3d17;
+    --green-900: #1b5e20;
+    --green-800: #205e25;
+    --green-700: #2e7d32;
+    --green-600: #388e3c;
+    --green-500: #4e9f3d;
+    --green-400: #66bb6a;
+    --green-100: #e5f3e1;
+    --green-50: #f4f9f1;
+    --gold-700: #9A6412;
+    --gold-600: #c98a2b;
+    --gold-500: #e0a83d;
+    --gold-400: #eab866;
+    --ink-900: #1a2417;
+    --ink-700: #364033;
+    --ink-500: #5c665a;
+    --ink-300: #8a938890;
+    --white: #ffffff;
+    --bg-soft: #f7faf5;
+    --border-soft: #e3ebe0;
+    --whatsapp: #25d366;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-pill: 999px;
+    --shadow-sm: 0 2px 10px rgba(15, 61, 23, 0.08);
+    --shadow-md: 0 10px 30px rgba(15, 61, 23, 0.12);
+    --shadow-lg: 0 20px 50px rgba(15, 61, 23, 0.18);
+    --font-head: "Poppins", "Segoe UI", Arial, sans-serif;
+    --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+    --font-accent: "Playfair Display", Georgia, serif;
+    --container: 1180px;
+    --header-h: 78px;
+}
+
+@page { size: 420mm 297mm; margin: 0; }
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--white);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: var(--ink-900);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  position: relative;
+  width: 420mm;
+  height: 297mm;
+  padding: 16mm 20mm 14mm;
+  background: var(--white);
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+  display: flex;
+  flex-direction: column;
+}
+.page:last-child { page-break-after: auto; }
+
+/* ---------- En-tête et pied de page ---------- */
+.ph {
+  display: flex;
+  align-items: flex-end;
+  gap: 10mm;
+  padding-bottom: 5mm;
+  border-bottom: 0.5mm solid var(--border-soft);
+  flex: none;
+}
+.ph img { height: 11mm; width: auto; }
+.ph-title { flex: 1; }
+.ph-title span {
+  display: block;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3mm;
+  letter-spacing: .28em;
+  color: var(--gold-700);
+  margin-bottom: 1.5mm;
+}
+.ph-title h2 {
+  margin: 0;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 8.4mm;
+  line-height: 1;
+  color: var(--green-950);
+}
+.ph-num {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.6mm;
+  color: var(--ink-500);
+}
+
+.pb { flex: 1; padding-top: 8mm; min-height: 0; display: flex; flex-direction: column; }
+.pb > .two, .pb > .three, .pb > .variants, .pb > .stationery,
+.pb > .field-kit, .pb > .donts, .pb > .values, .pb > .comps,
+.pb > .swatches, .pb > .fonts, .pb > .icongrid { flex: 1; }
+
+.pf {
+  flex: none;
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.4mm solid var(--border-soft);
+  padding-top: 3mm;
+  font-size: 2.9mm;
+  color: var(--ink-500);
+}
+.pf span:last-child { font-family: "Playfair Display", Georgia, serif; font-style: italic; }
+
+/* ---------- Couverture ---------- */
+.cover { padding: 0; flex-direction: row; }
+.cover-art {
+  position: absolute;
+  inset: 0 0 0 46%;
+  background: var(--white);
+  overflow: hidden;
+}
+.cb { position: absolute; }
+.cb1 { left: 0; top: -20mm; width: 62mm; height: 337mm; background: var(--green-900); }
+.cb2 { left: 65mm; top: 0; width: 46mm; height: 158mm; background: var(--green-700); border-radius: 0 0 6mm 6mm; }
+.cb3 { left: 65mm; top: 161mm; width: 46mm; height: 136mm; background: var(--gold-500); border-radius: 6mm 6mm 0 0; }
+.cb4 { left: 114mm; top: -20mm; width: 120mm; height: 337mm; background: var(--green-100); }
+.cover-symbol {
+  position: absolute;
+  left: 128mm; top: 148mm;
+  height: 96mm;
+}
+.cover-text {
+  position: relative;
+  z-index: 2;
+  align-self: flex-end;
+  padding: 0 0 48mm 26mm;
+  width: 46%;
+}
+.cover-kicker {
+  display: block;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.2mm;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold-700);
+  margin-bottom: 8mm;
+}
+.cover-text h1 {
+  margin: 0;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 40mm;
+  line-height: .93;
+  letter-spacing: -.025em;
+  color: var(--green-950);
+}
+.cover-sign {
+  margin: 5mm 0 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 7mm;
+  color: var(--gold-700);
+}
+.cover-sub {
+  margin: 10mm 0 0;
+  font-size: 4mm;
+  line-height: 1.6;
+  color: var(--ink-700);
+  max-width: 120mm;
+}
+.cover-foot {
+  position: absolute;
+  left: 26mm; right: 26mm; bottom: 14mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 3mm;
+  color: var(--ink-500);
+  z-index: 3;
+}
+.cover-foot span:first-child { font-family: Poppins, Arial, sans-serif; font-weight: 600; }
+
+/* ---------- Blocs de texte ---------- */
+h3 {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 5.8mm;
+  color: var(--green-950);
+  margin: 0 0 3mm;
+}
+h3 + h3 { margin-top: 6mm; }
+p { margin: 0 0 3.6mm; font-size: 4.3mm; line-height: 1.6; color: var(--ink-700); }
+.lead { font-size: 5.2mm; line-height: 1.55; color: var(--ink-700); max-width: 240mm; margin-bottom: 8mm; }
+.foot-note { font-size: 3.6mm; line-height: 1.5; color: var(--ink-500); margin-top: 4mm; }
+code {
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: .9em;
+  background: var(--bg-soft);
+  padding: 0 1mm;
+  border-radius: 1mm;
+  color: var(--green-800);
+}
+em { font-family: "Playfair Display", Georgia, serif; font-style: italic; color: var(--gold-700); }
+
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 14mm; height: 100%; }
+.two-wide-left { grid-template-columns: 1.25fr 1fr; }
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10mm; }
+.three-uneven { grid-template-columns: 1fr 1fr 1.05fr; height: 100%; }
+.pb > .three-uneven > div { display: flex; flex-direction: column; }
+.pb > .three-uneven > div > .shapes { flex: 1; justify-content: space-around; }
+
+ul.ticks { list-style: none; margin: 0 0 4mm; padding: 0; }
+ul.ticks li {
+  position: relative;
+  padding-left: 7mm;
+  margin-bottom: 3.4mm;
+  font-size: 4.2mm;
+  line-height: 1.5;
+  color: var(--ink-700);
+}
+ul.ticks li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 2.1mm;
+  width: 3mm; height: 3mm;
+  border-radius: 50%;
+  background: var(--green-700);
+}
+
+/* ---------- Tableaux ---------- */
+table { width: 100%; border-collapse: collapse; font-size: 3.9mm; }
+.kv th, .kv td { text-align: left; padding: 2.9mm 3.5mm; vertical-align: top; line-height: 1.45; }
+.kv thead th {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.2mm;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--green-900);
+}
+.kv tbody th {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  color: var(--green-950);
+  width: 34%;
+}
+.kv tbody td { color: var(--ink-700); }
+.kv tbody tr:nth-child(even) { background: var(--bg-soft); }
+.kv tbody tr { border-bottom: .3mm solid var(--border-soft); }
+
+/* ---------- Sommaire ---------- */
+.summary {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 16mm;
+}
+.summary li {
+  display: grid;
+  grid-template-columns: 10mm 1fr;
+  gap: 0 3mm;
+  padding: 2.6mm 0;
+  border-bottom: .3mm solid var(--border-soft);
+  break-inside: avoid;
+}
+.sum-n {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 4mm;
+  color: var(--gold-700);
+  grid-row: span 2;
+}
+.sum-t { font-family: Poppins, Arial, sans-serif; font-weight: 600; font-size: 4mm; color: var(--green-950); }
+.sum-d { font-size: 3.1mm; color: var(--ink-500); line-height: 1.4; }
+
+/* ---------- Piliers ---------- */
+.pillar {
+  background: var(--bg-soft);
+  border: .4mm solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 16mm 13mm;
+  min-height: 138mm;
+}
+.pillar-k {
+  display: block;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.8mm;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  margin-bottom: 6mm;
+}
+.pillar p { font-size: 5mm; line-height: 1.65; color: var(--ink-900); }
+.pillar-gold { background: var(--green-950); border-color: var(--green-950); }
+.pillar-gold .pillar-k { color: var(--gold-400); }
+.pillar-gold p { color: rgba(255, 255, 255, .88); }
+.promise {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 8mm !important;
+  color: var(--gold-400) !important;
+  margin-bottom: 5mm !important;
+}
+.note-band {
+  margin-top: auto;
+  background: var(--green-50);
+  border-radius: var(--radius-lg);
+  padding: 8mm 10mm;
+}
+.proofs, .rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8mm; }
+.rules { grid-template-columns: repeat(4, 1fr); gap: 6mm; }
+.proofs > div, .rules > div { display: flex; flex-direction: column; gap: 1.5mm; }
+.proofs strong, .rules strong {
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 4.2mm;
+  color: var(--green-800);
+}
+.proofs span, .rules span { font-size: 3.8mm; line-height: 1.45; color: var(--ink-700); }
+
+/* ---------- Valeurs ---------- */
+.values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8mm; }
+.value {
+  background: var(--green-50);
+  border: .4mm solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 12mm 10mm;
+  min-height: 150mm;
+  display: flex;
+  flex-direction: column;
+}
+.value-n {
+  display: flex; align-items: center; justify-content: center;
+  width: 14mm; height: 14mm;
+  border-radius: 50%;
+  background: var(--green-900);
+  color: var(--white);
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 5.6mm;
+  margin-bottom: 7mm;
+}
+.value h3 { font-size: 6.6mm; margin-bottom: 3.5mm; }
+.value p { font-size: 4.2mm; }
+.value .value-proof { margin-top: auto; }
+.value-proof {
+  border-top: .3mm solid var(--border-soft);
+  padding-top: 3mm;
+  color: var(--green-800) !important;
+  font-style: italic;
+}
+
+.quote-block {
+  background: var(--green-950);
+  border-radius: var(--radius-lg);
+  padding: 10mm;
+  margin-bottom: 8mm;
+}
+.quote {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 6.4mm !important;
+  line-height: 1.5;
+  color: var(--white) !important;
+}
+.cite { font-size: 3.9mm !important; color: var(--gold-400) !important; margin: 0 !important; }
+.chips { display: flex; flex-wrap: wrap; gap: 2.5mm; margin-bottom: 6mm; }
+.chips span {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.8mm;
+  color: var(--green-900);
+  background: var(--green-100);
+  padding: 2mm 4mm;
+  border-radius: var(--radius-pill);
+}
+
+/* ---------- Cercles de territoire ---------- */
+.rings { display: flex; flex-direction: column; gap: 4mm; margin-bottom: 6mm; }
+.ring { border-radius: var(--radius-md); padding: 8mm 9mm; }
+.ring strong { display: block; font-family: Poppins, Arial, sans-serif; font-size: 4.8mm; margin-bottom: 1mm; }
+.ring span { font-size: 3.9mm; line-height: 1.5; }
+.ring-1 { background: var(--green-900); color: var(--white); }
+.ring-1 span { color: rgba(255, 255, 255, .85); }
+.ring-2 { background: var(--green-100); color: var(--green-950); }
+.ring-2 span { color: var(--ink-700); }
+.ring-3 { background: var(--bg-soft); border: .4mm solid var(--border-soft); color: var(--green-950); }
+.ring-3 span { color: var(--ink-700); }
+
+/* ---------- Do / Don't d'écriture ---------- */
+.do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; }
+.do, .dont { border-radius: var(--radius-lg); padding: 11mm 12mm; }
+.do { background: var(--green-50); border: .4mm solid var(--green-400); }
+.dont { background: var(--bg-soft); border: .4mm solid var(--border-soft); }
+.do h3, .dont h3 { margin-bottom: 4mm; }
+.do ul, .dont ul { list-style: none; margin: 0; padding: 0; }
+.do li, .dont li {
+  position: relative;
+  padding-left: 8mm;
+  margin-bottom: 4.5mm;
+  font-size: 4.2mm;
+  line-height: 1.5;
+  color: var(--ink-700);
+}
+.do li::before { content: "✓"; position: absolute; left: 0; color: var(--green-700); font-weight: 700; }
+.dont li::before { content: "✕"; position: absolute; left: 0; color: #B3261E; font-weight: 700; }
+
+/* ---------- Logo ---------- */
+.logo-stage {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  height: 100%;
+}
+.variants { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9mm; height: 100%; }
+.variants figure { margin: 0; display: flex; flex-direction: column; }
+.vbox {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-soft);
+  border: .4mm solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 6mm;
+  min-height: 52mm;
+}
+.vbox-dark { background: var(--green-900); border-color: var(--green-900); padding: 0; }
+.vbox-dark img { max-width: 100%; max-height: 100%; }
+.vbox img { max-width: 78%; max-height: 40mm; }
+.variants figcaption { font-size: 3mm; line-height: 1.45; color: var(--ink-500); padding-top: 3mm; }
+.variants figcaption strong {
+  display: block;
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 3.4mm;
+  color: var(--green-950);
+  margin-bottom: 1mm;
+}
+
+.clearspace { margin-top: 5mm; flex: 1; display: flex; }
+.pb > .two > div { display: flex; flex-direction: column; }
+.cs-frame {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: .5mm dashed var(--green-500);
+  padding: 20mm;
+  background: var(--bg-soft);
+  border-radius: 2mm;
+}
+.cs-inner { border: .4mm solid var(--border-soft); background: var(--white); padding: 4mm; }
+.cs-inner img { width: 100%; }
+.cs-label {
+  position: absolute;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 3.4mm;
+  color: var(--green-700);
+}
+.cs-top { top: 5mm; left: 50%; }
+.cs-bottom { bottom: 5mm; left: 50%; }
+.cs-left { left: 5.5mm; top: 50%; }
+.cs-right { right: 5.5mm; top: 50%; }
+
+.scale-row { display: flex; align-items: flex-end; gap: 12mm; margin-top: auto; padding-top: 8mm; }
+.scale-row > div { display: flex; flex-direction: column; gap: 2mm; align-items: flex-start; }
+.scale-row span { font-size: 3.2mm; color: var(--ink-500); }
+
+.donts { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr 1fr; gap: 8mm; }
+.dont-card { margin: 0; display: flex; flex-direction: column; }
+.dt-box {
+  position: relative;
+  flex: 1;
+  min-height: 34mm;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-soft);
+  border: .4mm solid var(--border-soft);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  padding: 4mm;
+}
+.dt-box img { max-width: 76%; max-height: 30mm; }
+.dt-cross {
+  position: absolute; right: 2mm; top: 2mm;
+  width: 6mm; height: 6mm;
+  border-radius: 50%;
+  background: #B3261E;
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.2mm; font-weight: 700;
+}
+.dt-crowd { display: flex; align-items: center; gap: 1mm; }
+.dt-crowd img { max-width: 60%; }
+.dt-crowd span {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 4mm;
+  color: #B3261E;
+  line-height: 1.1;
+}
+.dt-busy {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    repeating-linear-gradient(45deg, var(--green-600) 0 4mm, var(--gold-500) 4mm 8mm);
+}
+.dt-busy img { max-width: 70%; }
+.donts figcaption { font-size: 3.3mm; line-height: 1.45; color: var(--ink-500); padding-top: 2.5mm; }
+.donts figcaption strong {
+  display: block;
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 3.9mm;
+  color: var(--green-950);
+  margin-bottom: .8mm;
+}
+
+/* ---------- Nuanciers ---------- */
+.swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; align-content: start; }
+.sw-tight { grid-template-columns: repeat(2, 1fr); gap: 4mm; margin-bottom: 4mm; }
+.sw { border-radius: var(--radius-md); overflow: hidden; border: .3mm solid var(--border-soft); }
+.sw-chip {
+  height: 30mm;
+  display: flex; align-items: flex-end;
+  padding: 3mm;
+}
+.sw-chip span {
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 2.9mm;
+  letter-spacing: .04em;
+}
+.sw-meta { padding: 2.5mm 3mm 3mm; background: var(--white); }
+.sw-meta strong {
+  display: block;
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 3.3mm;
+  color: var(--green-950);
+  margin-bottom: 1mm;
+}
+.sw-meta span { font-size: 3.1mm; line-height: 1.4; color: var(--ink-500); display: block; }
+
+.gradients { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-top: 6mm; }
+.gradients > div {
+  height: 24mm;
+  border-radius: var(--radius-md);
+  display: flex; align-items: flex-end;
+  padding: 3mm 4mm;
+}
+.gradients span { font-size: 2.9mm; color: var(--white); font-family: Poppins, Arial, sans-serif; font-weight: 500; }
+
+/* ---------- Contrastes ---------- */
+.contrast { font-size: 2.9mm; }
+.contrast th, .contrast td { padding: 1.5mm 2.5mm; text-align: left; border-bottom: .25mm solid var(--border-soft); }
+.contrast thead th {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 2.6mm;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--white);
+  background: var(--green-900);
+}
+.contrast .num { font-family: "DejaVu Sans Mono", monospace; text-align: right; }
+.contrast code { font-size: 2.6mm; }
+.dot {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 11mm; height: 6mm;
+  border-radius: 1.5mm;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3mm;
+  border: .25mm solid var(--border-soft);
+}
+.ratio-bar { display: flex; gap: 2mm; margin-bottom: 7mm; }
+.ratio-bar span {
+  padding: 5mm 3mm;
+  border-radius: var(--radius-sm);
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3mm;
+  text-align: center;
+}
+
+/* ---------- Typographie ---------- */
+.fonts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9mm; }
+.font-card {
+  border: .4mm solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 10mm;
+  background: var(--bg-soft);
+  display: flex;
+  flex-direction: column;
+}
+.font-spec {
+  font-size: 46mm;
+  line-height: 1;
+  color: var(--green-900);
+  margin-bottom: 4mm;
+}
+.font-card h3 { font-size: 6.6mm; margin-bottom: 2.5mm; }
+.font-role { font-size: 4mm; color: var(--ink-700); margin-bottom: 6mm; }
+.font-glyphs { font-size: 4.4mm !important; line-height: 1.9; color: var(--green-950) !important; word-break: break-all; }
+.font-weights { font-size: 3.3mm !important; color: var(--ink-500) !important; margin: auto 0 0 !important;
+  padding-top: 6mm; border-top: .3mm solid var(--border-soft); }
+
+.pb > .typescale { flex: 1; }
+.typescale { font-size: 3.6mm; height: 100%; }
+.typescale th, .typescale td { padding: 3mm 3.5mm; text-align: left; border-bottom: .25mm solid var(--border-soft); vertical-align: middle; }
+.typescale thead th {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.1mm;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--white);
+  background: var(--green-900);
+}
+.ts-name { font-family: "DejaVu Sans Mono", monospace; font-size: 3.4mm; color: var(--green-800); }
+.ts-sample { color: var(--green-950); white-space: nowrap; }
+.ts-use { font-size: 3.3mm; color: var(--ink-500); line-height: 1.4; }
+.typescale .num { font-family: "DejaVu Sans Mono", monospace; text-align: center; }
+
+.spec-demo {
+  background: var(--bg-soft);
+  border-radius: var(--radius-md);
+  padding: 7mm;
+  margin-bottom: 5mm;
+}
+.spec-dark { background: linear-gradient(135deg, var(--green-900), var(--green-600)); }
+.sd-eyebrow {
+  display: inline-block;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 2.8mm;
+  letter-spacing: .08em;
+  color: var(--green-900);
+  background: var(--green-100);
+  padding: 1.5mm 3.5mm;
+  border-radius: var(--radius-pill);
+  margin-bottom: 3mm;
+}
+.sd-h2 { font-family: Poppins, Arial, sans-serif; font-weight: 700; font-size: 7mm; line-height: 1.2; color: var(--green-950); margin: 0 0 2.5mm; }
+.sd-h3 { font-family: Poppins, Arial, sans-serif; font-weight: 600; font-size: 4.6mm; color: var(--green-950); margin: 0 0 2mm; }
+.sd-lead { font-size: 3.6mm !important; line-height: 1.55; margin: 0 !important; }
+.sd-body { font-size: 3.3mm !important; margin: 0 !important; }
+
+/* ---------- Icônes ---------- */
+.icongrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5mm; }
+.ic {
+  border: .35mm solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 4mm;
+  text-align: center;
+  background: var(--white);
+}
+.ic-box {
+  display: flex; align-items: center; justify-content: center;
+  height: 14mm;
+  color: var(--green-800);
+}
+.ic strong {
+  display: block;
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 2.7mm;
+  color: var(--green-950);
+  margin-bottom: .8mm;
+}
+.ic span { font-size: 2.5mm; color: var(--ink-500); line-height: 1.3; }
+.icon-treat { display: flex; flex-direction: column; gap: 4mm; margin-bottom: 4mm; }
+.icon-treat > div { display: flex; gap: 4mm; align-items: center; }
+.icon-treat span { font-size: 3.1mm; color: var(--ink-700); line-height: 1.45; }
+.icon-treat span strong { display: block; font-family: Poppins, Arial, sans-serif; color: var(--green-950); font-size: 3.4mm; }
+.aw-icon-demo {
+  width: 15mm; height: 15mm; flex: none;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--green-700), var(--green-500));
+  display: flex; align-items: center; justify-content: center;
+}
+.aw-icon-plain {
+  width: 15mm; height: 15mm; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  border: .35mm solid var(--border-soft);
+  border-radius: var(--radius-md);
+}
+
+/* ---------- Photographie ---------- */
+.veil-demo { position: relative; flex: 1; min-height: 92mm; border-radius: var(--radius-lg); overflow: hidden; }
+.veil-img {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 25% 30%, var(--green-400) 0 12%, transparent 13%),
+    radial-gradient(circle at 62% 62%, var(--green-500) 0 16%, transparent 17%),
+    radial-gradient(circle at 84% 24%, var(--green-600) 0 10%, transparent 11%),
+    linear-gradient(160deg, #7FA86B, #4C7A3A 55%, #35602C);
+}
+.veil-grad { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 61, 23, .55), rgba(15, 61, 23, .82)); }
+.veil-text { position: absolute; left: 8mm; bottom: 8mm; right: 8mm; }
+.veil-badge {
+  display: inline-block;
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 2.8mm;
+  color: var(--white);
+  background: rgba(255, 255, 255, .15);
+  border: .25mm solid rgba(255, 255, 255, .3);
+  padding: 1.5mm 4mm;
+  border-radius: var(--radius-pill);
+  margin-bottom: 3mm;
+}
+.veil-text h2 { font-family: Poppins, Arial, sans-serif; font-weight: 800; font-size: 9mm; color: var(--white); margin: 0 0 2mm; }
+.veil-text p { color: rgba(255, 255, 255, .92) !important; font-size: 3.4mm; margin: 0; }
+
+/* ---------- Formes ---------- */
+.shapes { display: flex; flex-direction: column; gap: 4mm; margin-bottom: 4mm; }
+.shape { display: grid; grid-template-columns: 22mm 1fr; gap: 0 5mm; align-items: center; }
+.shape-box { width: 22mm; height: 20mm; background: var(--green-700); grid-row: span 3; }
+.shape-white { background: var(--white); border: .25mm solid var(--border-soft); border-radius: 3mm; }
+.shape strong { font-family: "DejaVu Sans Mono", monospace; font-size: 3.4mm; color: var(--green-950); }
+.shape > span { font-size: 3.1mm; color: var(--ink-500); line-height: 1.4; }
+.shape-use { color: var(--ink-700) !important; }
+.spacing { display: flex; flex-direction: column; gap: 2.2mm; margin-bottom: 7mm; }
+.sp { display: flex; align-items: center; gap: 3mm; }
+.sp-bar { height: 4mm; background: var(--green-500); border-radius: 1mm; }
+.sp-val { font-family: "DejaVu Sans Mono", monospace; font-size: 3.1mm; color: var(--ink-500); }
+
+/* ---------- Composants ---------- */
+.comps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5mm; margin-bottom: 9mm; align-content: space-between; }
+.comp {
+  border: .35mm solid var(--border-soft);
+  border-left: 1.2mm solid var(--green-700);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 3.5mm 4mm;
+  background: var(--white);
+}
+.comp strong { display: block; font-family: Poppins, Arial, sans-serif; font-size: 3.9mm; color: var(--green-950); margin-bottom: 1mm; }
+.comp span { font-size: 3.2mm; color: var(--ink-500); line-height: 1.4; }
+.demo-strip {
+  display: flex; flex-wrap: wrap; gap: 5mm; align-items: center;
+  background: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  padding: 8mm;
+}
+.d-btn {
+  font-family: Poppins, Arial, sans-serif; font-weight: 600; font-size: 3.4mm;
+  padding: 3.4mm 7mm; border-radius: var(--radius-pill);
+}
+.d-primary { background: var(--gold-500); color: var(--green-950); }
+.d-green { background: var(--green-700); color: var(--white); }
+.d-outline { border: .6mm solid var(--green-700); color: var(--green-700); }
+.d-eyebrow {
+  font-family: Poppins, Arial, sans-serif; font-weight: 600; font-size: 2.9mm;
+  letter-spacing: .08em; color: var(--green-900); background: var(--green-100);
+  padding: 1.6mm 4mm; border-radius: var(--radius-pill);
+}
+.d-tag {
+  font-family: Poppins, Arial, sans-serif; font-weight: 600; font-size: 2.9mm;
+  color: var(--green-900); background: var(--green-100);
+  padding: 1.2mm 3.5mm; border-radius: var(--radius-pill);
+}
+.d-chip {
+  font-family: Poppins, Arial, sans-serif; font-size: 3.1mm;
+  border: .4mm solid var(--border-soft); color: var(--ink-700);
+  padding: 2mm 4.5mm; border-radius: var(--radius-pill); background: var(--white);
+}
+.d-chip-on { background: var(--green-700); color: var(--white); border-color: var(--green-700); }
+.d-badge {
+  font-family: Poppins, Arial, sans-serif; font-weight: 700; font-size: 2.7mm;
+  letter-spacing: .03em; background: var(--gold-500); color: var(--green-950);
+  padding: 1.4mm 3.5mm; border-radius: var(--radius-pill);
+}
+
+/* ---------- Papeterie ---------- */
+.stationery { display: grid; grid-template-columns: 1.1fr 1fr 1.1fr; gap: 10mm; height: 100%; }
+.stationery figure { margin: 0; display: flex; flex-direction: column; }
+.stationery figcaption { font-size: 2.9mm; line-height: 1.45; color: var(--ink-500); padding-top: 4mm; }
+.stationery figcaption strong, .field-kit figcaption strong, .social figcaption strong {
+  display: block; font-family: Poppins, Arial, sans-serif; font-size: 3.4mm;
+  color: var(--green-950); margin-bottom: 1mm;
+}
+.biz { display: flex; flex-direction: column; gap: 5mm; }
+.biz-front, .biz-back {
+  width: 85mm; height: 55mm;
+  border-radius: 2mm;
+  border: .35mm solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--white);
+  position: relative;
+}
+.biz-back { flex-direction: column; align-items: flex-start; justify-content: center; padding: 7mm; }
+.biz-name { font-family: Poppins, Arial, sans-serif; font-weight: 700; font-size: 4.4mm; color: var(--green-950); }
+.biz-role { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-size: 3.2mm; color: var(--ink-500); margin-bottom: 3.5mm; }
+.biz-lines { display: flex; flex-direction: column; gap: 1mm; }
+.biz-lines span { font-size: 3mm; color: var(--ink-700); }
+.biz-logo { position: absolute; right: 6mm; bottom: 6mm; width: 26mm; }
+.letter {
+  width: 100%; aspect-ratio: 210 / 297;
+  border: .35mm solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  background: var(--white);
+  padding: 9mm;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.letter-logo { width: 42%; margin-bottom: 9mm; }
+.letter-lines { display: flex; flex-direction: column; gap: 2.6mm; flex: 1; }
+.letter-lines span { height: 1.2mm; background: var(--border-soft); border-radius: .6mm; }
+.l-long { width: 100%; } .l-mid { width: 74%; } .l-short { width: 42%; }
+.letter-foot {
+  border-top: 1mm solid var(--gold-500);
+  padding-top: 3mm;
+  font-size: 2.5mm;
+  color: var(--ink-500);
+  text-align: center;
+}
+.sig {
+  display: flex; gap: 5mm; align-items: flex-start;
+  border-left: 1mm solid var(--green-700);
+  padding: 4mm 0 4mm 5mm;
+}
+.sig img { width: 34mm; }
+.sig div { display: flex; flex-direction: column; gap: 1mm; }
+.sig strong { font-family: Poppins, Arial, sans-serif; font-size: 3.6mm; color: var(--green-950); }
+.sig em { font-size: 3mm; }
+.sig span { font-size: 2.9mm; color: var(--ink-700); }
+.sig-tag { font-family: "Playfair Display", Georgia, serif; font-style: italic; color: var(--gold-700) !important; }
+
+/* ---------- Terrain ---------- */
+.field-kit { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8mm; height: 100%; }
+.field-kit figure { margin: 0; display: flex; flex-direction: column; justify-content: center; }
+.field-kit figcaption { margin-top: auto; }
+.field-kit figcaption { font-size: 2.8mm; line-height: 1.45; color: var(--ink-500); padding-top: 3.5mm; }
+.signboard {
+  background: var(--green-900);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.sb-body { padding: 5mm; display: flex; flex-direction: column; gap: 1.5mm; }
+.sb-body strong { font-family: Poppins, Arial, sans-serif; font-size: 4.2mm; color: var(--white); }
+.sb-body span { font-size: 3mm; color: rgba(255, 255, 255, .85); }
+.sb-tel { font-family: Poppins, Arial, sans-serif; font-weight: 700; font-size: 4.6mm !important; color: var(--gold-400) !important; }
+.plant-tag {
+  width: 52mm; min-height: 104mm;
+  border: .4mm solid var(--border-soft);
+  border-top: 3mm solid var(--green-700);
+  border-radius: 2mm;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  padding: 5mm 4mm;
+  display: flex; flex-direction: column; gap: 2.5mm; align-items: center; text-align: center;
+}
+.plant-tag strong { font-family: Poppins, Arial, sans-serif; font-size: 3.8mm; color: var(--green-950); }
+.plant-tag span { font-size: 2.8mm; color: var(--ink-700); }
+.pt-lot { font-family: "DejaVu Sans Mono", monospace; font-size: 2.5mm !important; color: var(--ink-500) !important; margin-top: auto; }
+.shirt { display: flex; justify-content: center; width: 100%; }
+.shirt-body {
+  position: relative;
+  width: 76%; margin: 0 auto; aspect-ratio: 4/5;
+  background: var(--green-900);
+  border-radius: 3mm 3mm 5mm 5mm;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding-top: 22mm;
+  box-shadow: var(--shadow-sm);
+}
+.shirt-body::before, .shirt-body::after {
+  content: ""; position: absolute; top: 0;
+  width: 22%; height: 34%;
+  background: var(--green-900);
+}
+.shirt-body::before { left: -20%; border-radius: 4mm 0 6mm 4mm; }
+.shirt-body::after { right: -20%; border-radius: 0 4mm 4mm 6mm; }
+.shirt-collar {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 30%; height: 7mm; background: var(--white);
+  border-radius: 0 0 6mm 6mm;
+}
+.van { position: relative; padding-bottom: 8mm; margin-top: 4mm; }
+.van-body {
+  background: var(--white);
+  border: .5mm solid var(--border-soft);
+  border-radius: 3mm 8mm 2mm 2mm;
+  aspect-ratio: 5/3;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3mm;
+  box-shadow: var(--shadow-sm);
+}
+.van-tel { font-size: 2.6mm; color: var(--ink-700); }
+.van-wheel { position: absolute; bottom: 0; width: 13mm; height: 13mm; border-radius: 50%; background: var(--green-950); }
+.w1 { left: 14%; } .w2 { right: 14%; }
+
+/* ---------- Social ---------- */
+.social { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+.social figure { margin: 0; }
+.social figcaption { font-size: 2.8mm; line-height: 1.45; color: var(--ink-500); padding-top: 3mm; }
+.post {
+  aspect-ratio: 1;
+  background: var(--green-900);
+  border-radius: var(--radius-md);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.post-media { flex: 1; padding: 7mm; display: flex; flex-direction: column; justify-content: center; gap: 3mm; }
+.post-eyebrow {
+  align-self: flex-start;
+  font-family: Poppins, Arial, sans-serif; font-weight: 600; font-size: 2.6mm;
+  letter-spacing: .08em; color: var(--white);
+  background: rgba(255, 255, 255, .15); padding: 1.4mm 3.5mm; border-radius: var(--radius-pill);
+}
+.post-media h3 { color: var(--white); font-size: 6mm; margin: 0; }
+.post-price { font-family: Poppins, Arial, sans-serif; font-weight: 700; font-size: 6.5mm; color: var(--gold-500); }
+.post-price em { font-family: Inter, Arial, sans-serif; font-style: normal; font-size: 3mm; color: rgba(255, 255, 255, .8); }
+.post-foot {
+  display: flex; align-items: center; gap: 3mm;
+  padding: 4mm 7mm; border-top: .3mm solid rgba(255, 255, 255, .15);
+}
+.post-foot span { font-size: 3mm; color: rgba(255, 255, 255, .8); }
+.cover-fb { aspect-ratio: 1640/624; border-radius: var(--radius-md); overflow: hidden; }
+.avatars { display: flex; align-items: flex-end; gap: 5mm; }
+
+.contact-final {
+  margin-top: 6mm;
+  background: var(--green-950);
+  border-radius: var(--radius-lg);
+  padding: 7mm;
+  display: flex; flex-direction: column; gap: 1.5mm;
+}
+.contact-final strong { font-family: Poppins, Arial, sans-serif; font-size: 4.4mm; color: var(--white); }
+.contact-final span { font-size: 3.1mm; color: rgba(255, 255, 255, .85); }
+
+.field-kit figure > *:not(figcaption) { margin-block: auto; }
+</style></head><body>
+<section class="page cover">
+  <div class="cover-art">
+    <div class="cb cb1"></div><div class="cb cb2"></div>
+    <div class="cb cb3"></div><div class="cb cb4"></div>
+    <img src="assets/agriwin-icone.svg" class="cover-symbol" alt="">
+  </div>
+  <div class="cover-text">
+    <span class="cover-kicker">Charte de marque · Édition 1.0 · 2026</span>
+    <h1>AgriWin<br>Togo</h1>
+    <p class="cover-sign">Votre partenaire agricole&nbsp;!</p>
+    <p class="cover-sub">Identité, design system et règles d'application.<br>
+    Kégué, Togo — expertise agricole, plants tropicaux, formation.</p>
+  </div>
+  <div class="cover-foot"><span>AgriWin Togo</span><span>agriwintogo.com · +228 96 63 82 00</span></div>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>—</span><h2>Sommaire</h2></div>
+    <span class="ph-num">02 / 25</span>
+  </header>
+  <div class="pb"><ol class='summary'><li><span class='sum-n'>01</span><span class='sum-t'>La marque en une page</span><span class='sum-d'>Ce qu'AgriWin Togo est, pour qui, et ce qui ne change pas.</span></li><li><span class='sum-n'>02</span><span class='sum-t'>Mission, vision, promesse</span><span class='sum-d'>Les trois phrases qui fondent tout le reste.</span></li><li><span class='sum-n'>03</span><span class='sum-t'>Valeurs</span><span class='sum-d'>Fiabilité, qualité, proximité, ouverture.</span></li><li><span class='sum-n'>04</span><span class='sum-t'>Territoire et publics</span><span class='sum-d'>Kégué, le Togo, la sous-région, l'international.</span></li><li><span class='sum-n'>05</span><span class='sum-t'>Ton de voix</span><span class='sum-d'>Comment la marque écrit, et ce qu'elle n'écrit pas.</span></li><li><span class='sum-n'>06</span><span class='sum-t'>Le symbole</span><span class='sum-d'>D'où vient le signe et comment il a été mis au propre.</span></li><li><span class='sum-n'>07</span><span class='sum-t'>Les six variantes</span><span class='sum-d'>Principal, horizontal, symbole, monochrome, inversé, monogramme.</span></li><li><span class='sum-n'>08</span><span class='sum-t'>Zone de protection et tailles</span><span class='sum-d'>L'air autour du logo, et jusqu'où il descend.</span></li><li><span class='sum-n'>09</span><span class='sum-t'>Usages interdits</span><span class='sum-d'>Huit façons d'abîmer la marque.</span></li><li><span class='sum-n'>10</span><span class='sum-t'>Palette verte</span><span class='sum-d'>Neuf verts, du plus sombre au plus clair.</span></li><li><span class='sum-n'>11</span><span class='sum-t'>Or et neutres</span><span class='sum-d'>L'accent de terre et les encres de lecture.</span></li><li><span class='sum-n'>12</span><span class='sum-t'>Répartition et contrastes</span><span class='sum-d'>Où va chaque couleur, et ce que dit le contrôle WCAG.</span></li><li><span class='sum-n'>13</span><span class='sum-t'>Les trois polices</span><span class='sum-d'>Poppins, Inter, Playfair Display.</span></li><li><span class='sum-n'>14</span><span class='sum-t'>Échelle typographique</span><span class='sum-d'>Dix-sept styles, du display au micro.</span></li><li><span class='sum-n'>15</span><span class='sum-t'>Règles de composition</span><span class='sum-d'>Ce qui se met en capitales, et ce qui ne s'y met pas.</span></li><li><span class='sum-n'>16</span><span class='sum-t'>Iconographie</span><span class='sum-d'>Grille de 24, trait de 2, jonctions arrondies.</span></li><li><span class='sum-n'>17</span><span class='sum-t'>Photographie</span><span class='sum-d'>Le terrain, la lumière, le voile vert.</span></li><li><span class='sum-n'>18</span><span class='sum-t'>Formes, ombres, mouvement</span><span class='sum-d'>Quatre rayons, trois ombres, deux dixièmes de seconde.</span></li><li><span class='sum-n'>19</span><span class='sum-t'>Composants d'interface</span><span class='sum-d'>Les quatorze briques du système.</span></li><li><span class='sum-n'>20</span><span class='sum-t'>Papeterie</span><span class='sum-d'>Carte de visite, en-tête, signature d'e-mail.</span></li><li><span class='sum-n'>21</span><span class='sum-t'>Supports de terrain</span><span class='sum-d'>Panneau de pépinière, étiquette de plant, tenue, véhicule.</span></li><li><span class='sum-n'>22</span><span class='sum-t'>Digital et réseaux sociaux</span><span class='sum-d'>Avatar, couverture, format de publication.</span></li><li><span class='sum-n'>23</span><span class='sum-t'>Gouvernance de la marque</span><span class='sum-d'>Qui décide, qui fournit les fichiers, qui contrôle.</span></li></ol></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>01</span><h2>La marque en une page</h2></div>
+    <span class="ph-num">03 / 25</span>
+  </header>
+  <div class="pb">
+<div class="two">
+  <div>
+    <p class="lead">AgriWin Togo est une entreprise d'expertise et de prestation de services
+    agricoles, de formation et d'écoulement de produits agricoles, spécialisée dans les
+    plants tropicaux. Fondée en 2025, basée à Kégué.</p>
+    <p>Elle est née d'un constat simple : beaucoup de porteurs de projets agricoles manquent
+    en même temps d'un accompagnement technique fiable, de plants de qualité et de débouchés
+    pour leurs récoltes. AgriWin Togo répond aux trois dans une seule structure.</p>
+    <table class='kv'><thead><tr><th>Repère</th><th>Valeur</th></tr></thead><tbody><tr><th>Raison sociale</th><td>AgriWin Togo</td></tr><tr><th>Signature</th><td>Votre partenaire agricole !</td></tr><tr><th>Création</th><td>2025</td></tr><tr><th>Siège</th><td>Kégué, Togo</td></tr><tr><th>Dirigeant</th><td>KEGNON Emmanuel, fondateur & CEO</td></tr><tr><th>Métiers</th><td>Conseil · Formation · Pépinière · Écoulement · Élevage</td></tr><tr><th>Portée</th><td>Togo, Afrique de l'Ouest, international</td></tr><tr><th>Contact</th><td>+228 96 63 82 00 · agriwintogo@gmail.com</td></tr><tr><th>Horaires</th><td>Lun–Sam : 8h – 18h</td></tr></tbody></table>
+  </div>
+  <div>
+    <div class="quote-block">
+      <p class="quote">« Nous voulons que chaque client, qu'il soit à Kégué ou à
+      l'international, reçoive des plants de qualité et un accompagnement dans lequel il
+      peut avoir une confiance totale. »</p>
+      <p class="cite">KEGNON Emmanuel — Fondateur &amp; CEO</p>
+    </div>
+    <h3>Les six domaines</h3>
+    <div class="chips">
+      <span>Expertise &amp; conseil</span><span>Formation agricole</span>
+      <span>Pépinière &amp; plants tropicaux</span><span>Prestations agricoles</span>
+      <span>Écoulement de produits</span><span>Accompagnement en élevage</span>
+    </div>
+    <h3>Ce qui ne change jamais</h3>
+    <ul class="ticks">
+      <li>Le nom s'écrit <strong>AgriWin Togo</strong> — deux majuscules internes, un espace avant Togo.</li>
+      <li>La signature porte son point d'exclamation et son espace insécable.</li>
+      <li>Le vert domine, l'or ponctue.</li>
+      <li>Ce qui est promis est vérifiable.</li>
+    </ul>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>02</span><h2>Mission, vision, promesse</h2></div>
+    <span class="ph-num">04 / 25</span>
+  </header>
+  <div class="pb">
+<div class="three">
+  <div class="pillar">
+    <span class="pillar-k">Mission</span>
+    <p>Rendre l'expertise agricole, les plants de qualité et les débouchés commerciaux
+    accessibles à tous les porteurs de projets, quelle que soit leur taille, au Togo et au-delà.</p>
+  </div>
+  <div class="pillar">
+    <span class="pillar-k">Vision</span>
+    <p>Devenir une référence ouest-africaine de l'accompagnement agricole intégré, reconnue
+    pour la qualité de ses plants tropicaux et le sérieux de ses prestations.</p>
+  </div>
+  <div class="pillar pillar-gold">
+    <span class="pillar-k">Promesse</span>
+    <p class="promise">Votre partenaire agricole&nbsp;!</p>
+    <p>Un partenaire, pas un fournisseur : quelqu'un qui reste après la livraison.</p>
+  </div>
+</div>
+<div class="note-band">
+  <h3>Comment la promesse se prouve</h3>
+  <div class="proofs">
+    <div><strong>Avant</strong><span>Diagnostic du terrain et devis détaillé : variétés,
+    quantités, calendrier, prix.</span></div>
+    <div><strong>Pendant</strong><span>Plants sélectionnés et contrôlés un par un avant de
+    quitter la pépinière de Kégué.</span></div>
+    <div><strong>Après</strong><span>Suivi technique de la reprise et mise en relation avec
+    des acheteurs pour la récolte.</span></div>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>03</span><h2>Valeurs</h2></div>
+    <span class="ph-num">05 / 25</span>
+  </header>
+  <div class="pb">
+<p class="lead">Quatre valeurs, dans cet ordre. Elles s'écrivent avec ces mots-là : chaque
+valeur est suivie de la preuve qui la rend vérifiable, sans quoi elle n'est qu'un mot.</p>
+<div class="values"><div class='value'><span class='value-n'>1</span><h3>Fiabilité</h3><p>Des engagements tenus, des délais respectés, un accompagnement suivi.</p><p class='value-proof'>On annonce une date de livraison et on la tient — ou on prévient avant.</p></div><div class='value'><span class='value-n'>2</span><h3>Qualité</h3><p>Des plants et des prestations sélectionnés selon des standards exigeants.</p><p class='value-proof'>Un plant qui ne passe pas le contrôle ne quitte pas la pépinière.</p></div><div class='value'><span class='value-n'>3</span><h3>Proximité</h3><p>Une équipe à l'écoute, disponible par téléphone et WhatsApp au quotidien.</p><p class='value-proof'>Un numéro unique, une réponse le jour même en semaine.</p></div><div class='value'><span class='value-n'>4</span><h3>Ouverture</h3><p>Une clientèle locale et internationale, servie avec la même exigence.</p><p class='value-proof'>Le particulier de Kégué et l'ONG internationale ont le même interlocuteur.</p></div></div>
+<p class="foot-note">Ces quatre valeurs sont la liste complète. N'en ajoutez pas pour
+remplir une grille, et ne les reformulez pas d'un support à l'autre.</p></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>04</span><h2>Territoire et publics</h2></div>
+    <span class="ph-num">06 / 25</span>
+  </header>
+  <div class="pb">
+<div class="two">
+  <div>
+    <h3>Cinq publics, un même interlocuteur</h3>
+    <table class='kv'><thead><tr><th>Public</th><th>Ce qu'il vient chercher</th></tr></thead><tbody><tr><th>Particuliers</th><td>Un jardin, un verger familial, quelques plants. Besoin : le bon plant et le bon conseil.</td></tr><tr><th>Petits producteurs</th><td>Une parcelle à planter ou à replanter. Besoin : volume, prix, calendrier.</td></tr><tr><th>Entreprises</th><td>Reboisement, aménagement, plantation industrielle. Besoin : prestation complète et facturation.</td></tr><tr><th>ONG et projets</th><td>Programmes agricoles et environnementaux. Besoin : traçabilité, formation, reporting.</td></tr><tr><th>Investisseurs internationaux</th><td>Projet agricole au Togo. Besoin : un partenaire local fiable sur place.</td></tr></tbody></table>
+  </div>
+  <div>
+    <h3>Trois cercles</h3>
+    <div class="rings">
+      <div class="ring ring-1"><strong>Kégué</strong><span>La pépinière, l'atelier, le terrain.
+      C'est d'ici que part chaque plant.</span></div>
+      <div class="ring ring-2"><strong>Togo &amp; Afrique de l'Ouest</strong><span>Le marché
+      principal : plants tropicaux recherchés, prestations, formation.</span></div>
+      <div class="ring ring-3"><strong>International</strong><span>Investisseurs et ONG qui
+      cherchent un partenaire agricole au Togo.</span></div>
+    </div>
+    <h3>Ce que cela change dans les supports</h3>
+    <ul class="ticks">
+      <li>Le français est la langue de référence de tous les supports.</li>
+      <li>Les prix s'affichent en francs CFA ; une conversion n'apparaît que sur demande.</li>
+      <li>Le numéro est toujours au format international : +228 96 63 82 00.</li>
+      <li>WhatsApp est un canal de contact de premier rang, pas un canal de secours.</li>
+    </ul>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>05</span><h2>Ton de voix</h2></div>
+    <span class="ph-num">07 / 25</span>
+  </header>
+  <div class="pb">
+<p class="lead">Le ton d'AgriWin Togo est celui d'un technicien qui explique, pas d'un
+commercial qui vend. Français, vouvoiement, phrases courtes, présent de l'indicatif.
+Le client est « vous », l'entreprise est « nous ».</p>
+<div class="do-dont">
+  <div class="do">
+    <h3>On écrit</h3>
+    <ul>
+      <li>« Chaque plant est contrôlé avant de quitter notre pépinière. »</li>
+      <li>« Manguier greffé Kent, en sachet de 3 L — 3 500 F le plant. »</li>
+      <li>« Nous vous rappelons sous 24 h ouvrées. »</li>
+      <li>« Décrivez-nous votre besoin : surface, localisation, variétés. »</li>
+      <li>« Demander un devis », « Voir le catalogue ».</li>
+    </ul>
+  </div>
+  <div class="dont">
+    <h3>On n'écrit pas</h3>
+    <ul>
+      <li>« Les meilleurs plants d'Afrique de l'Ouest » — invérifiable.</li>
+      <li>« 100 % de clients satisfaits » — un chiffre sans source.</li>
+      <li>« Nous mettons un point d'honneur à… » — du remplissage.</li>
+      <li>« Cliquez ici » — un libellé qui ne dit pas ce qui se passe.</li>
+      <li>« AGRIWIN TOGO » en capitales dans une phrase.</li>
+    </ul>
+  </div>
+</div>
+<div class="note-band">
+  <h3>Sept règles d'écriture</h3>
+  <div class="rules">
+    <div><strong>Nom</strong><span>AgriWin Togo. Jamais Agriwin, AGRIWIN ni AgriWin-Togo.</span></div>
+    <div><strong>Prix</strong><span>3 500 F — espace fine, symbole après. Jamais « 3500FCFA ».</span></div>
+    <div><strong>Numéro</strong><span>+228 96 63 82 00, groupé par deux chiffres.</span></div>
+    <div><strong>Horaires</strong><span>Lun–Sam : 8h – 18h, avec un tiret demi-cadratin.</span></div>
+    <div><strong>Vocabulaire</strong><span>Les mots du métier : greffé, sachet de 3 L, taux de reprise.</span></div>
+    <div><strong>Emoji</strong><span>Aucun dans les supports de marque ; un seul par publication sociale.</span></div>
+    <div><strong>Ponctuation</strong><span>Espace insécable avant : ; ! ? et avant le symbole monétaire.</span></div>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>06</span><h2>Le symbole</h2></div>
+    <span class="ph-num">08 / 25</span>
+  </header>
+  <div class="pb">
+<div class="two two-wide-left">
+  <div class="logo-stage">
+    <img src="assets/agriwin-icone.svg" alt="Symbole AgriWin Togo" style="height:150mm">
+  </div>
+  <div>
+    <h3>Ce que le signe raconte</h3>
+    <p>Un plant de sisal à six feuilles, et une chèvre à son pied. Les deux
+    métiers d'AgriWin Togo — la culture et l'élevage — tiennent dans un seul
+    signe, sans qu'aucun mot soit nécessaire.</p>
+    <h3>Comment il a été mis au propre</h3>
+    <p>Le signe n'a pas été redessiné : le logo d'origine a été vectorisé, puis
+    ses valeurs ont été ramenées sur la palette de marque. Le plant, la chèvre
+    et leurs proportions sont exactement ceux que l'entreprise utilise déjà.</p>
+    <table class='kv'><thead><tr><th>Élément</th><th>Règle</th></tr></thead><tbody><tr><th>Origine</th><td>Logo fourni par AgriWin Togo, vectorisé en courbes de Bézier.</td></tr><tr><th>Structure</th><td>Six feuilles : deux hampes centrales presque verticales, deux latérales montantes, deux extérieures retombantes.</td></tr><tr><th>Proportions</th><td>Rapport largeur / hauteur de 0,64 — le signe est plus haut que large.</td></tr><tr><th>Modelé</th><td>Six valeurs de vert, de green-400 pour les nervures éclairées à green-950 pour les contours.</td></tr><tr><th>Chèvre</th><td>Dessin au trait à intérieur évidé, au pied de la feuille droite, environ un cinquième de la hauteur du signe.</td></tr><tr><th>Une seule encre</th><td>Silhouette pleine, contours d'origine repeints dans la couleur du fond : les feuilles restent séparées.</td></tr><tr><th>Fichier</th><td>SVG vectoriel, six couches superposées de la plus claire à la plus sombre.</td></tr></tbody></table>
+    <p class="foot-note">Le symbole est un fichier, pas un dessin à reproduire. Ne le
+    redessinez pas : prenez le SVG dans le groupe Logos du design system.</p>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>07</span><h2>Les six variantes</h2></div>
+    <span class="ph-num">09 / 25</span>
+  </header>
+  <div class="pb">
+<div class="variants">
+  <figure><div class="vbox"><img src="assets/agriwin-logo-principal.svg" alt="Logo principal"></div>
+    <figcaption><strong>Principal — vertical</strong>Format carré ou portrait : affiche,
+    couverture de document, publication sociale.</figcaption></figure>
+  <figure><div class="vbox"><img src="assets/agriwin-logo-horizontal.svg" alt="Logo horizontal"></div>
+    <figcaption><strong>Horizontal</strong>En-tête de site, papeterie, bandeau,
+    signature d'e-mail.</figcaption></figure>
+  <figure><div class="vbox"><img src="assets/agriwin-icone.svg" alt="Symbole seul"></div>
+    <figcaption><strong>Symbole seul</strong>Quand le nom est déjà écrit à côté :
+    tampon, filigrane, motif.</figcaption></figure>
+  <figure><div class="vbox"><img src="assets/agriwin-logo-mono.svg" alt="Monochrome"></div>
+    <figcaption><strong>Monochrome</strong>Une seule encre, green-950 : gravure,
+    sérigraphie une couleur, télécopie.</figcaption></figure>
+  <figure><div class="vbox vbox-dark"><img src="assets/agriwin-logo-inverse.svg" alt="Version inversée"></div>
+    <figcaption><strong>Inversé</strong>Sur aplat green-900 ou photo foncée.
+    Le fond fait partie du fichier.</figcaption></figure>
+  <figure><div class="vbox"><img src="assets/agriwin-monogramme.svg" alt="Monogramme"></div>
+    <figcaption><strong>Monogramme</strong>Favicon, avatar de réseau social,
+    tuile d'application.</figcaption></figure>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>08</span><h2>Zone de protection et tailles</h2></div>
+    <span class="ph-num">10 / 25</span>
+  </header>
+  <div class="pb">
+<div class="two">
+  <div>
+    <h3>La zone de protection</h3>
+    <p>L'unité <strong>x</strong> est la hauteur de la hampe centrale divisée par quatre.
+    Cette marge est libre sur les quatre côtés : aucun texte, aucun filet, aucune image,
+    aucun bord de page n'y entre.</p>
+    <div class="clearspace">
+      <div class="cs-frame">
+        <span class="cs-label cs-top">x</span>
+        <span class="cs-label cs-left">x</span>
+        <span class="cs-label cs-right">x</span>
+        <span class="cs-label cs-bottom">x</span>
+        <div class="cs-inner"><img src="assets/agriwin-logo-horizontal.svg" alt="Zone de protection"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h3>Tailles minimales</h3>
+    <table class='kv'><thead><tr><th>Variante</th><th>Taille minimale</th></tr></thead><tbody><tr><th>Horizontal — impression</th><td>28 mm de large</td></tr><tr><th>Horizontal — écran</th><td>120 px de large</td></tr><tr><th>Principal vertical — impression</th><td>22 mm de large</td></tr><tr><th>Principal vertical — écran</th><td>96 px de large</td></tr><tr><th>Symbole seul — écran</th><td>32 px</td></tr><tr><th>Monogramme — favicon</th><td>16, 32 et 180 px</td></tr></tbody></table>
+    <h3>En dessous de ces tailles</h3>
+    <p>La chèvre et les nervures se referment et le signe devient une tache. Passez alors au
+    monogramme, qui est dessiné pour cette échelle.</p>
+    <div class="scale-row">
+      <div><img src="assets/agriwin-logo-horizontal.svg" style="width:118px"><span>120 px — limite basse</span></div>
+      <div><img src="assets/agriwin-monogramme.svg" style="width:44px"><span>44 px — monogramme</span></div>
+      <div><img src="assets/agriwin-monogramme.svg" style="width:32px"><span>32 px — favicon</span></div>
+    </div>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>09</span><h2>Usages interdits</h2></div>
+    <span class="ph-num">11 / 25</span>
+  </header>
+  <div class="pb">
+<p class="lead">Huit façons d'abîmer la marque. Chacune s'est déjà produite quelque part :
+la liste est là pour qu'elle ne se produise pas ici.</p>
+<div class="donts"><figure class='dont-card'><div class='dt-box'><img src='assets/agriwin-logo-horizontal.svg' style='transform:scaleX(1.55)'><span class='dt-cross'>✕</span></div><figcaption><strong>Déformer</strong>Le symbole garde son ratio. Redimensionnez toujours proportionnellement.</figcaption></figure><figure class='dont-card'><div class='dt-box'><img src='assets/agriwin-logo-horizontal.svg' style='transform:rotate(-14deg)'><span class='dt-cross'>✕</span></div><figcaption><strong>Incliner</strong>Le logo est horizontal. Aucune rotation, même « dynamique ».</figcaption></figure><figure class='dont-card'><div class='dt-box'><img src='assets/agriwin-logo-horizontal.svg' style='filter:hue-rotate(160deg)'><span class='dt-cross'>✕</span></div><figcaption><strong>Recolorer</strong>Les verts sont fixés. Pour changer d'encre, changez de fichier.</figcaption></figure><figure class='dont-card'><div class='dt-box'><img src='assets/agriwin-logo-horizontal.svg' style='filter:drop-shadow(4px 6px 5px rgba(0,0,0,.55))'><span class='dt-cross'>✕</span></div><figcaption><strong>Ombrer</strong>Pas d'ombre portée, pas de relief, pas de contour.</figcaption></figure><figure class='dont-card'><div class='dt-box'><img src='assets/agriwin-logo-horizontal.svg' style='filter:opacity(.35)'><span class='dt-cross'>✕</span></div><figcaption><strong>Délaver</strong>Le logo reste à pleine opacité. Pour un filigrane, utilisez le symbole seul.</figcaption></figure><figure class='dont-card'><div class='dt-box'><img src='assets/agriwin-logo-horizontal.svg' style='filter:invert(1)'><span class='dt-cross'>✕</span></div><figcaption><strong>Inverser les valeurs</strong>Sur fond sombre, prenez la version inversée fournie.</figcaption></figure><figure class='dont-card'><div class='dt-box'><div class='dt-crowd'><img src='assets/agriwin-logo-horizontal.svg'><span>PROMO<br>−20 %</span></div><span class='dt-cross'>✕</span></div><figcaption><strong>Étouffer</strong>La zone de protection est libre : rien ne s'en approche.</figcaption></figure><figure class='dont-card'><div class='dt-box'><div class='dt-busy'><img src='assets/agriwin-logo-horizontal.svg'></div><span class='dt-cross'>✕</span></div><figcaption><strong>Poser sur du chargé</strong>Sur une photo texturée, posez d'abord un aplat green-900.</figcaption></figure></div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>10</span><h2>Palette verte</h2></div>
+    <span class="ph-num">12 / 25</span>
+  </header>
+  <div class="pb">
+<p class="lead">Neuf verts, du plus sombre au plus clair. Le vert est la couleur de la
+marque : sur une page, il occupe l'essentiel de la surface colorée.</p>
+<div class="swatches"><div class="sw">
+      <div class="sw-chip" style="background:#0f3d17">
+        <span style="color:#FFFFFF">#0F3D17</span>
+      </div>
+      <div class="sw-meta"><strong>--green-950</strong><span>Encre de marque. Titres, symbole monochrome, texte sur fond or.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#1b5e20">
+        <span style="color:#FFFFFF">#1B5E20</span>
+      </div>
+      <div class="sw-meta"><strong>--green-900</strong><span>Vert principal. Aplats de marque, en-têtes, fonds pleins.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#205e25">
+        <span style="color:#FFFFFF">#205E25</span>
+      </div>
+      <div class="sw-meta"><strong>--green-800</strong><span>Vert de survol sur fond clair, second plan des dégradés.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#2e7d32">
+        <span style="color:#FFFFFF">#2E7D32</span>
+      </div>
+      <div class="sw-meta"><strong>--green-700</strong><span>Vert d'action. Boutons pleins, liens, icônes, surtitres.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#388e3c">
+        <span style="color:#FFFFFF">#388E3C</span>
+      </div>
+      <div class="sw-meta"><strong>--green-600</strong><span>Vert de survol du bouton vert, variantes d'illustration.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#4e9f3d">
+        <span style="color:#0f3d17">#4E9F3D</span>
+      </div>
+      <div class="sw-meta"><strong>--green-500</strong><span>Vert lumineux. Lame centrale du symbole, accents graphiques.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#66bb6a">
+        <span style="color:#0f3d17">#66BB6A</span>
+      </div>
+      <div class="sw-meta"><strong>--green-400</strong><span>Vert clair. Décor, illustrations, jamais de texte dessus.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#e5f3e1">
+        <span style="color:#0f3d17">#E5F3E1</span>
+      </div>
+      <div class="sw-meta"><strong>--green-100</strong><span>Fond de pastille (surtitre), puces, états sélectionnés.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#f4f9f1">
+        <span style="color:#0f3d17">#F4F9F1</span>
+      </div>
+      <div class="sw-meta"><strong>--green-50</strong><span>Fond de section très clair, alternance de blocs.</span></div>
+    </div></div>
+<div class="gradients">
+  <div style="background:linear-gradient(135deg,#1b5e20,#2e7d32)">
+    <span>green-900 → green-700 · bande de chiffres</span></div>
+  <div style="background:linear-gradient(135deg,#1b5e20,#388e3c)">
+    <span>green-900 → green-600 · bandeau d'appel à l'action</span></div>
+  <div style="background:linear-gradient(135deg,#2e7d32,#4e9f3d)">
+    <span>green-700 → green-500 · pictogramme de carte service</span></div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>11</span><h2>Or et neutres</h2></div>
+    <span class="ph-num">13 / 25</span>
+  </header>
+  <div class="pb">
+<div class="two">
+  <div>
+    <h3>L'accent de terre</h3>
+    <p>L'or vient de la terre et de la récolte. Il ponctue : sur une page, il ne dépasse pas
+    un dixième de la surface colorée. Une seule action or par écran visible.</p>
+    <div class="swatches sw-tight"><div class="sw">
+      <div class="sw-chip" style="background:#9A6412">
+        <span style="color:#0f3d17">#9A6412</span>
+      </div>
+      <div class="sw-meta"><strong>--gold-700</strong><span>Or lisible. Seule teinte or autorisée pour du texte sur fond clair (ajout du design system : l'or du site ne passait pas le seuil WCAG).</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#c98a2b">
+        <span style="color:#0f3d17">#C98A2B</span>
+      </div>
+      <div class="sw-meta"><strong>--gold-600</strong><span>Or profond, décoratif : filets épais, aplats, pictogrammes pleins. Jamais de texte ni de trait fin sur fond clair.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#e0a83d">
+        <span style="color:#0f3d17">#E0A83D</span>
+      </div>
+      <div class="sw-meta"><strong>--gold-500</strong><span>Or principal. Bouton d'appel à l'action, soulignements.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#eab866">
+        <span style="color:#0f3d17">#EAB866</span>
+      </div>
+      <div class="sw-meta"><strong>--gold-400</strong><span>Or clair. Survol du bouton or, aplats décoratifs.</span></div>
+    </div></div>
+    <p class="foot-note"><strong>gold-700 est un ajout de ce système.</strong> L'or du site
+    (gold-600) ne donne que 2.94:1 sur blanc : il ne pouvait pas porter de texte. gold-700
+    (#9A6412) atteint 4.99:1 et reprend tous les usages textuels de l'or.</p>
+    <h3>Couleur de service</h3>
+    <div class="swatches sw-tight"><div class="sw">
+      <div class="sw-chip" style="background:#25d366">
+        <span style="color:#0f3d17">#25D366</span>
+      </div>
+      <div class="sw-meta"><strong>--whatsapp</strong><span>Couleur de service imposée par WhatsApp. Usage réservé au bouton WhatsApp.</span></div>
+    </div></div>
+  </div>
+  <div>
+    <h3>Encres et fonds</h3>
+    <div class="swatches sw-tight"><div class="sw">
+      <div class="sw-chip" style="background:#1a2417">
+        <span style="color:#FFFFFF">#1A2417</span>
+      </div>
+      <div class="sw-meta"><strong>--ink-900</strong><span>Texte courant sur fond clair.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#364033">
+        <span style="color:#FFFFFF">#364033</span>
+      </div>
+      <div class="sw-meta"><strong>--ink-700</strong><span>Texte de paragraphe, descriptions.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#5c665a">
+        <span style="color:#0f3d17">#5C665A</span>
+      </div>
+      <div class="sw-meta"><strong>--ink-500</strong><span>Texte secondaire, légendes, mentions.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#8a938890">
+        <span style="color:#0f3d17">#8A938890</span>
+      </div>
+      <div class="sw-meta"><strong>--ink-300</strong><span>Texte désactivé et séparateurs discrets (déjà semi-transparent).</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#ffffff">
+        <span style="color:#0f3d17">#FFFFFF</span>
+      </div>
+      <div class="sw-meta"><strong>--white</strong><span>Fond de base, texte sur aplats verts.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#f7faf5">
+        <span style="color:#0f3d17">#F7FAF5</span>
+      </div>
+      <div class="sw-meta"><strong>--bg-soft</strong><span>Fond de section alterné, très légèrement teinté de vert.</span></div>
+    </div><div class="sw">
+      <div class="sw-chip" style="background:#e3ebe0">
+        <span style="color:#0f3d17">#E3EBE0</span>
+      </div>
+      <div class="sw-meta"><strong>--border-soft</strong><span>Bordure de carte, séparateurs, contours de champ.</span></div>
+    </div></div>
+    <p class="foot-note">ink-300 est déjà semi-transparent dans la source du site
+    (#8A938890, soit 56 % d'opacité) : c'est volontaire, il sert aux séparateurs et au texte
+    désactivé, jamais au texte lu.</p>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>12</span><h2>Répartition et contrastes</h2></div>
+    <span class="ph-num">14 / 25</span>
+  </header>
+  <div class="pb">
+<div class="two two-wide-left">
+  <div>
+    <h3>Les 19 paires validées</h3>
+    <table class="contrast">
+      <thead><tr><th>Association</th><th>Aperçu</th><th>Texte</th><th>Fond</th>
+      <th>Ratio</th><th>Niveau</th></tr></thead>
+      <tbody><tr><td>Texte courant sur fond blanc</td><td><span class='dot' style='background:#ffffff;color:#1a2417'>Aa</span></td><td><code>ink-900</code></td><td><code>white</code></td><td class='num'>16.05:1</td><td>AA</td></tr><tr><td>Paragraphe sur fond blanc</td><td><span class='dot' style='background:#ffffff;color:#364033'>Aa</span></td><td><code>ink-700</code></td><td><code>white</code></td><td class='num'>10.84:1</td><td>AA</td></tr><tr><td>Texte secondaire sur fond blanc</td><td><span class='dot' style='background:#ffffff;color:#5c665a'>Aa</span></td><td><code>ink-500</code></td><td><code>white</code></td><td class='num'>5.99:1</td><td>AA</td></tr><tr><td>Paragraphe sur fond doux</td><td><span class='dot' style='background:#f7faf5;color:#364033'>Aa</span></td><td><code>ink-700</code></td><td><code>bg-soft</code></td><td class='num'>10.29:1</td><td>AA</td></tr><tr><td>Titre sur fond blanc</td><td><span class='dot' style='background:#ffffff;color:#0f3d17'>Aa</span></td><td><code>green-950</code></td><td><code>white</code></td><td class='num'>12.35:1</td><td>AA</td></tr><tr><td>Titre sur fond doux</td><td><span class='dot' style='background:#f7faf5;color:#0f3d17'>Aa</span></td><td><code>green-950</code></td><td><code>bg-soft</code></td><td class='num'>11.73:1</td><td>AA</td></tr><tr><td>Lien et bouton vert sur blanc</td><td><span class='dot' style='background:#ffffff;color:#2e7d32'>Aa</span></td><td><code>green-700</code></td><td><code>white</code></td><td class='num'>5.13:1</td><td>AA</td></tr><tr><td>Surtitre vert sur pastille claire</td><td><span class='dot' style='background:#e5f3e1;color:#1b5e20'>Aa</span></td><td><code>green-900</code></td><td><code>green-100</code></td><td class='num'>6.83:1</td><td>AA</td></tr><tr><td>Blanc sur vert principal</td><td><span class='dot' style='background:#1b5e20;color:#ffffff'>Aa</span></td><td><code>white</code></td><td><code>green-900</code></td><td class='num'>7.87:1</td><td>AA</td></tr><tr><td>Blanc sur vert d'action</td><td><span class='dot' style='background:#2e7d32;color:#ffffff'>Aa</span></td><td><code>white</code></td><td><code>green-700</code></td><td class='num'>5.13:1</td><td>AA</td></tr><tr><td>Blanc sur encre de marque</td><td><span class='dot' style='background:#0f3d17;color:#ffffff'>Aa</span></td><td><code>white</code></td><td><code>green-950</code></td><td class='num'>12.35:1</td><td>AA</td></tr><tr><td>Texte du bouton or</td><td><span class='dot' style='background:#e0a83d;color:#0f3d17'>Aa</span></td><td><code>green-950</code></td><td><code>gold-500</code></td><td class='num'>5.79:1</td><td>AA</td></tr><tr><td>Texte du bouton or au survol</td><td><span class='dot' style='background:#eab866;color:#0f3d17'>Aa</span></td><td><code>green-950</code></td><td><code>gold-400</code></td><td class='num'>6.79:1</td><td>AA</td></tr><tr><td>Accent or sur fond blanc</td><td><span class='dot' style='background:#ffffff;color:#9A6412'>Aa</span></td><td><code>gold-700</code></td><td><code>white</code></td><td class='num'>4.99:1</td><td>AA</td></tr><tr><td>Accent or sur fond doux</td><td><span class='dot' style='background:#f7faf5;color:#9A6412'>Aa</span></td><td><code>gold-700</code></td><td><code>bg-soft</code></td><td class='num'>4.74:1</td><td>AA</td></tr><tr><td>Or clair sur vert principal (grand texte uniquement)</td><td><span class='dot' style='background:#1b5e20;color:#eab866'>Aa</span></td><td><code>gold-400</code></td><td><code>green-900</code></td><td class='num'>4.33:1</td><td>AA grand texte</td></tr><tr><td>Or principal sur encre de marque</td><td><span class='dot' style='background:#0f3d17;color:#e0a83d'>Aa</span></td><td><code>gold-500</code></td><td><code>green-950</code></td><td class='num'>5.79:1</td><td>AA</td></tr><tr><td>Contour de bouton vert sur blanc</td><td><span class='dot' style='background:#ffffff;color:#2e7d32'>Aa</span></td><td><code>green-700</code></td><td><code>white</code></td><td class='num'>5.13:1</td><td>AA composant</td></tr><tr><td>Blanc sur vert de survol</td><td><span class='dot' style='background:#388e3c;color:#ffffff'>Aa</span></td><td><code>white</code></td><td><code>green-600</code></td><td class='num'>4.12:1</td><td>AA composant</td></tr></tbody>
+    </table>
+  </div>
+  <div>
+    <h3>Répartition sur une page</h3>
+    <div class="ratio-bar">
+      <span style="flex:60;background:#ffffff;color:#0f3d17;border:1px solid #e3ebe0">Blanc et fonds doux · 60 %</span>
+      <span style="flex:30;background:#1b5e20;color:#ffffff">Verts de marque · 30 %</span>
+      <span style="flex:10;background:#e0a83d;color:#0f3d17">Or · 10 %</span>
+    </div>
+    <h3>Deux combinaisons corrigées</h3>
+    <table class="kv"><thead><tr><th>Combinaison du site</th><th>Mesure</th><th>Correctif</th></tr></thead>
+    <tbody><tr><td>Or #C98A2B sur fond blanc</td><td class='num'>2.94:1</td><td>Utiliser --gold-700 (#9A6412) pour tout texte or sur fond clair ; --gold-600 reste réservé aux aplats et filets épais.</td></tr><tr><td>Vert d'action #2E7D32 sur pastille #E5F3E1</td><td class='num'>4.45:1</td><td>Le surtitre en pastille passe à --green-900 (#1B5E20) : 6.83:1.</td></tr></tbody></table>
+    <p class="foot-note">Seuils appliqués : WCAG 2.1 AA — 4.5:1 pour le texte courant,
+    3:1 à partir de 24 px, en gras à partir de 19 px, et pour tout élément d'interface
+    porteur de sens. Chaque ratio de ce tableau est recalculé à la génération du document.</p>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>13</span><h2>Les trois polices</h2></div>
+    <span class="ph-num">15 / 25</span>
+  </header>
+  <div class="pb">
+<div class="fonts">
+  <div class="font-card">
+    <div class="font-spec" style="font-family:Poppins;font-weight:800">Aa</div>
+    <h3>Poppins</h3>
+    <p class="font-role">Titres, surtitres, boutons, navigation, chiffres.</p>
+    <p class="font-glyphs" style="font-family:Poppins;font-weight:600">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 àéèêçùôî ! ? &amp;</p>
+    <p class="font-weights">Graisses utilisées : 500 · 600 · 700 · 800</p>
+  </div>
+  <div class="font-card">
+    <div class="font-spec" style="font-family:Inter;font-weight:600">Aa</div>
+    <h3>Inter</h3>
+    <p class="font-role">Texte courant, formulaires, tableaux, légendes.</p>
+    <p class="font-glyphs" style="font-family:Inter">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 àéèêçùôî ! ? &amp;</p>
+    <p class="font-weights">Graisses utilisées : 400 · 500 · 600</p>
+  </div>
+  <div class="font-card">
+    <div class="font-spec" style="font-family:'Playfair Display';font-style:italic;font-weight:600">Aa</div>
+    <h3>Playfair Display <em>Italique</em></h3>
+    <p class="font-role">Un à trois mots d'accent, et la signature de marque. Rien d'autre.</p>
+    <p class="font-glyphs" style="font-family:'Playfair Display';font-style:italic">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 àéèêçùôî ! ? &amp;</p>
+    <p class="font-weights">Graisses utilisées : 500 · 600 — italique uniquement</p>
+  </div>
+</div>
+<div class="note-band">
+  <h3>Substitutions</h3>
+  <div class="rules">
+    <div><strong>Poppins absente</strong><span>Segoe UI, puis Arial. Jamais une autre géométrique.</span></div>
+    <div><strong>Inter absente</strong><span>Segoe UI, puis Arial.</span></div>
+    <div><strong>Playfair absente</strong><span>Georgia italique. Sans serif disponible, supprimez l'accent plutôt que de le composer en sans.</span></div>
+    <div><strong>Bureautique</strong><span>Word et PowerPoint : installez les trois polices. À défaut, Calibri remplace Inter et Poppins.</span></div>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>14</span><h2>Échelle typographique</h2></div>
+    <span class="ph-num">16 / 25</span>
+  </header>
+  <div class="pb">
+<p class="lead">Dix styles nommés couvrent tous les supports. Les tailles de titre sont
+fluides : la valeur indiquée est le maximum, la borne basse s'applique sur mobile.</p>
+<table class="typescale">
+  <thead><tr><th>Style</th><th>Aperçu</th><th>Taille</th><th>Graisse</th>
+  <th>Interligne</th><th>Police</th><th>Usage</th></tr></thead>
+  <tbody><tr><td class='ts-name'>Display</td><td class='ts-sample' style="font-family:Poppins;font-weight:800;font-size:min(56px, 44px);line-height:1.08">AgriWin Togo</td><td><code>clamp(34px, 5vw, 56px)</code></td><td class='num'>800</td><td class='num'>1.08</td><td>Poppins</td><td class='ts-use'>Titre de couverture, hero</td></tr><tr><td class='ts-name'>H1</td><td class='ts-sample' style="font-family:Poppins;font-weight:800;font-size:min(44px, 44px);line-height:1.12">AgriWin Togo</td><td><code>clamp(30px, 4.2vw, 44px)</code></td><td class='num'>800</td><td class='num'>1.12</td><td>Poppins</td><td class='ts-use'>Titre de page</td></tr><tr><td class='ts-name'>H2</td><td class='ts-sample' style="font-family:Poppins;font-weight:700;font-size:min(38px, 44px);line-height:1.2">AgriWin Togo</td><td><code>clamp(26px, 3.4vw, 38px)</code></td><td class='num'>700</td><td class='num'>1.2</td><td>Poppins</td><td class='ts-use'>Titre de section</td></tr><tr><td class='ts-name'>H3</td><td class='ts-sample' style="font-family:Poppins;font-weight:600;font-size:min(22px, 44px);line-height:1.3">AgriWin Togo</td><td><code>22px</code></td><td class='num'>600</td><td class='num'>1.3</td><td>Poppins</td><td class='ts-use'>Titre de carte</td></tr><tr><td class='ts-name'>Surtitre</td><td class='ts-sample' style="font-family:Poppins;font-weight:600;font-size:min(13px, 44px);line-height:1.4">AgriWin Togo</td><td><code>13px</code></td><td class='num'>600</td><td class='num'>1.4</td><td>Poppins</td><td class='ts-use'>Pastille de section, majuscules, interlettrage 0.08em</td></tr><tr><td class='ts-name'>Corps</td><td class='ts-sample' style="font-family:Inter;font-weight:400;font-size:min(16px, 44px);line-height:1.6">AgriWin Togo</td><td><code>16px</code></td><td class='num'>400</td><td class='num'>1.6</td><td>Inter</td><td class='ts-use'>Texte courant</td></tr><tr><td class='ts-name'>Corps large</td><td class='ts-sample' style="font-family:Inter;font-weight:400;font-size:min(18px, 44px);line-height:1.6">AgriWin Togo</td><td><code>18px</code></td><td class='num'>400</td><td class='num'>1.6</td><td>Inter</td><td class='ts-use'>Chapô, accroche de section</td></tr><tr><td class='ts-name'>Petit</td><td class='ts-sample' style="font-family:Inter;font-weight:400;font-size:min(14px, 44px);line-height:1.5">AgriWin Togo</td><td><code>14px</code></td><td class='num'>400</td><td class='num'>1.5</td><td>Inter</td><td class='ts-use'>Légendes, mentions, pied de page</td></tr><tr><td class='ts-name'>Bouton</td><td class='ts-sample' style="font-family:Poppins;font-weight:600;font-size:min(15px, 44px);line-height:1">AgriWin Togo</td><td><code>15px</code></td><td class='num'>600</td><td class='num'>1</td><td>Poppins</td><td class='ts-use'>Libellé de bouton</td></tr><tr><td class='ts-name'>Accroche</td><td class='ts-sample' style="font-family:'Playfair Display';font-style:italic;font-weight:500;font-size:min(30px, 44px);line-height:1.35">AgriWin Togo</td><td><code>clamp(20px, 2.4vw, 30px)</code></td><td class='num'>500</td><td class='num'>1.35</td><td>Playfair Display Italic</td><td class='ts-use'>Mot mis en valeur dans un titre, citation</td></tr></tbody>
+</table></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>15</span><h2>Règles de composition</h2></div>
+    <span class="ph-num">17 / 25</span>
+  </header>
+  <div class="pb">
+<div class="two">
+  <div>
+    <h3>Longueur et rythme</h3>
+    <ul class="ticks">
+      <li>Le texte courant reste autour de <strong>65 caractères</strong> par ligne.</li>
+      <li>Interligne 1,6 pour le texte, 1,2 pour les titres, 1,08 pour le display.</li>
+      <li>Un seul niveau de titre par bloc : un h2 par section, des h3 ensuite.</li>
+      <li>Le chapô tient sous 220 caractères ; au-delà, c'est un paragraphe.</li>
+    </ul>
+    <h3>Capitales et interlettrage</h3>
+    <ul class="ticks">
+      <li>Seuls les surtitres sont en capitales, avec 0,08 em d'interlettrage.</li>
+      <li>Le nom de la marque ne se met jamais en capitales dans une phrase.</li>
+      <li>Les titres en display prennent −0,02 em pour resserrer les blancs.</li>
+      <li>Aucun texte courant en capitales : la lecture chute.</li>
+    </ul>
+    <h3>L'accent Playfair</h3>
+    <p>Un à trois mots dans un titre de section, en italique gold-700. Un seul par page.
+    Un paragraphe entier en Playfair est une faute.</p>
+  </div>
+  <div>
+    <h3>Trois compositions types</h3>
+    <div class="spec-demo">
+      <span class="sd-eyebrow">CE QUE NOUS FAISONS</span>
+      <h2 class="sd-h2">Une expertise agricole complète, <em>sur le terrain</em></h2>
+      <p class="sd-lead">Conseil, formation, pépinière et écoulement des récoltes : une seule
+      structure pour les quatre besoins d'un projet agricole.</p>
+    </div>
+    <div class="spec-demo spec-dark">
+      <h2 class="sd-h2" style="color:#fff">Un projet agricole en tête ?</h2>
+      <p class="sd-lead" style="color:rgba(255,255,255,.9)">Décrivez-nous votre besoin :
+      nos experts vous répondent avec un devis clair.</p>
+    </div>
+    <div class="spec-demo">
+      <h3 class="sd-h3">Pépinière &amp; plants tropicaux</h3>
+      <p class="sd-body">Manguiers, avocatiers, cocotiers, agrumes, teck, moringa — chaque
+      plant est contrôlé avant de quitter la pépinière de Kégué.</p>
+    </div>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>16</span><h2>Iconographie</h2></div>
+    <span class="ph-num">18 / 25</span>
+  </header>
+  <div class="pb">
+<div class="two two-wide-left">
+  <div>
+    <div class="icongrid"><div class='ic'><div class='ic-box'><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div><strong>leaf</strong><span>Conseil, pépinière, nature</span></div><div class='ic'><div class='ic-box'><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div><strong>school</strong><span>Formation</span></div><div class='ic'><div class='ic-box'><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><strong>users</strong><span>Élevage, équipe, proximité</span></div><div class='ic'><div class='ic-box'><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div><strong>shield</strong><span>Fiabilité, garantie</span></div><div class='ic'><div class='ic-box'><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"/><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg></div><strong>target</strong><span>Qualité, mission</span></div><div class='ic'><div class='ic-box'><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></div><strong>arrow</strong><span>Lien, progression</span></div><div class='ic'><div class='ic-box'><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><strong>phone</strong><span>Téléphone, WhatsApp</span></div><div class='ic'><div class='ic-box'><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v14H3z"/><path d="M21 6 12 13 3 6"/></svg></div><strong>mail</strong><span>E-mail</span></div><div class='ic'><div class='ic-box'><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg></div><strong>pin</strong><span>Adresse, localisation</span></div><div class='ic'><div class='ic-box'><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v18H3z"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg></div><strong>calendar</strong><span>Horaires, date</span></div><div class='ic'><div class='ic-box'><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><strong>check</strong><span>Confirmation, validation</span></div><div class='ic'><div class='ic-box'><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Z"/><path d="M20 20l-4-4"/></svg></div><strong>search</strong><span>Recherche du catalogue</span></div></div>
+  </div>
+  <div>
+    <h3>La règle de tracé</h3>
+    <table class='kv'><thead><tr><th>Paramètre</th><th>Valeur</th></tr></thead><tbody><tr><th>Grille</th><td>24 × 24, marge optique de 2 unités</td></tr><tr><th>Trait</th><td>2 unités, jamais de remplissage</td></tr><tr><th>Extrémités</th><td>Arrondies (round cap et round join)</td></tr><tr><th>Couleur</th><td>Héritée du texte voisin (currentColor)</td></tr><tr><th>Angles</th><td>Rayon minimal de 2 unités ; pas d'angle vif</td></tr></tbody></table>
+    <h3>Deux traitements</h3>
+    <div class="icon-treat">
+      <div><div class="aw-icon-demo"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+      <span><strong>En carte service</strong>Blanc dans un carré de 58 px, rayon radius-md,
+      dégradé green-700 → green-500.</span></div>
+      <div><div class="aw-icon-plain"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#2e7d32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      <span><strong>Partout ailleurs</strong>Au trait, de la couleur du texte à côté duquel
+      il se place.</span></div>
+    </div>
+    <p class="foot-note">Ces douze tracés sont ceux du site AgriWin Togo. Pour un besoin
+    nouveau, dessinez dans la même grille plutôt que d'importer un autre jeu d'icônes.
+    Un pictogramme ne remplace jamais un libellé : il l'accompagne.</p>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>17</span><h2>Photographie</h2></div>
+    <span class="ph-num">19 / 25</span>
+  </header>
+  <div class="pb">
+<div class="two">
+  <div>
+    <h3>Ce que l'on photographie</h3>
+    <ul class="ticks">
+      <li>Des mains au travail : semis, repiquage, greffe, mise en terre.</li>
+      <li>Des plateaux de jeunes plants, en rangs, dans la pépinière.</li>
+      <li>Des gens réels de l'équipe et des clients — pas des poses.</li>
+      <li>Le marché et la distribution : la récolte qui trouve son débouché.</li>
+      <li>Le terrain avant et après : la preuve d'une prestation.</li>
+    </ul>
+    <h3>Comment on la prend</h3>
+    <table class='kv'><thead><tr><th>Paramètre</th><th>Règle</th></tr></thead><tbody><tr><th>Lumière</th><td>Naturelle, tôt le matin ou en fin d'après-midi. Pas de flash direct.</td></tr><tr><th>Hauteur</th><td>À hauteur d'homme, ou à hauteur de plant pour la pépinière.</td></tr><tr><th>Profondeur</th><td>Un sujet net, un arrière-plan doux — jamais tout net.</td></tr><tr><th>Verts</th><td>Les verts de l'image doivent pouvoir voisiner green-700 sans jurer.</td></tr><tr><th>Format</th><td>3:2 pour les bandeaux, 4:3 pour les cartes, 1:1 pour le social.</td></tr></tbody></table>
+  </div>
+  <div>
+    <h3>Le voile vert</h3>
+    <p>Sur toute photo qui porte du texte, posez ce dégradé du haut vers le bas. C'est lui
+    qui garantit la lisibilité du titre blanc, quelle que soit l'image.</p>
+    <div class="veil-demo">
+      <div class="veil-img"></div>
+      <div class="veil-grad"></div>
+      <div class="veil-text">
+        <span class="veil-badge">Fondée en 2025 — Kégué, Togo</span>
+        <h2>Chaque plant compte.</h2>
+        <p>AgriWin Togo accompagne particuliers, entreprises et ONG.</p>
+      </div>
+    </div>
+    <p class="foot-note"><code>linear-gradient(180deg, rgba(15,61,23,.55), rgba(15,61,23,.82))</code>
+    — soit green-950 à 55 % puis 82 %.</p>
+    <h3>Images de substitution</h3>
+    <p>Tant que les photos de la pépinière et de l'équipe ne sont pas disponibles, les
+    images d'ambiance portent une mention explicite sous le bloc. Retirez la mention en
+    même temps que l'image.</p>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>18</span><h2>Formes, ombres, mouvement</h2></div>
+    <span class="ph-num">20 / 25</span>
+  </header>
+  <div class="pb">
+<div class="three three-uneven">
+  <div>
+    <h3>Rayons</h3>
+    <div class="shapes"><div class='shape'><div class='shape-box' style='border-radius:8px'></div><strong>--radius-sm</strong><span>8px</span><span class='shape-use'>Champs de formulaire, petites pastilles.</span></div><div class='shape'><div class='shape-box' style='border-radius:14px'></div><strong>--radius-md</strong><span>14px</span><span class='shape-use'>Cartes, images, blocs de contenu.</span></div><div class='shape'><div class='shape-box' style='border-radius:22px'></div><strong>--radius-lg</strong><span>22px</span><span class='shape-use'>Grands blocs, bandeaux, encarts d'appel à l'action.</span></div><div class='shape'><div class='shape-box' style='border-radius:999px'></div><strong>--radius-pill</strong><span>999px</span><span class='shape-use'>Boutons et pastilles de surtitre.</span></div></div>
+    <p class="foot-note">Quatre rayons, pas un de plus. Un rayon choisi hors de cette liste
+    se voit immédiatement dans une grille de cartes.</p>
+  </div>
+  <div>
+    <h3>Ombres</h3>
+    <div class="shapes"><div class='shape'><div class='shape-box shape-white' style='box-shadow:0 2px 10px rgba(15, 61, 23, 0.08)'></div><strong>--shadow-sm</strong><span class='shape-use'>Repos des cartes et boutons.</span></div><div class='shape'><div class='shape-box shape-white' style='box-shadow:0 10px 30px rgba(15, 61, 23, 0.12)'></div><strong>--shadow-md</strong><span class='shape-use'>Survol des cartes et boutons.</span></div><div class='shape'><div class='shape-box shape-white' style='box-shadow:0 20px 50px rgba(15, 61, 23, 0.18)'></div><strong>--shadow-lg</strong><span class='shape-use'>Éléments flottants : menu mobile, boutons d'action fixes.</span></div></div>
+    <p class="foot-note">Les trois ombres sont teintées de green-950 (15, 61, 23) : une ombre
+    grise neutre fait sale sur les fonds verts.</p>
+  </div>
+  <div>
+    <h3>Espacement</h3>
+    <div class="spacing"><div class='sp'><span class='sp-bar' style='width:4px'></span><span class='sp-val'>4 px</span></div><div class='sp'><span class='sp-bar' style='width:8px'></span><span class='sp-val'>8 px</span></div><div class='sp'><span class='sp-bar' style='width:12px'></span><span class='sp-val'>12 px</span></div><div class='sp'><span class='sp-bar' style='width:16px'></span><span class='sp-val'>16 px</span></div><div class='sp'><span class='sp-bar' style='width:20px'></span><span class='sp-val'>20 px</span></div><div class='sp'><span class='sp-bar' style='width:24px'></span><span class='sp-val'>24 px</span></div><div class='sp'><span class='sp-bar' style='width:32px'></span><span class='sp-val'>32 px</span></div><div class='sp'><span class='sp-bar' style='width:40px'></span><span class='sp-val'>40 px</span></div><div class='sp'><span class='sp-bar' style='width:48px'></span><span class='sp-val'>48 px</span></div><div class='sp'><span class='sp-bar' style='width:64px'></span><span class='sp-val'>64 px</span></div><div class='sp'><span class='sp-bar' style='width:80px'></span><span class='sp-val'>80 px</span></div></div>
+    <h3>Mouvement</h3>
+    <table class='kv'><thead><tr><th>Paramètre</th><th>Valeur</th></tr></thead><tbody><tr><th>Durée</th><td>0,15 s pour un bouton, 0,2 s pour une carte, 0,4 s pour une image</td></tr><tr><th>Courbe</th><td>ease — pas de rebond, pas d'élastique</td></tr><tr><th>Carte au survol</th><td>Monte de 5 px et prend shadow-md</td></tr><tr><th>Bouton au clic</th><td>Se comprime à 97 %</td></tr><tr><th>Flèche de lien</th><td>Avance de 4 px</td></tr></tbody></table>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>19</span><h2>Composants d'interface</h2></div>
+    <span class="ph-num">21 / 25</span>
+  </header>
+  <div class="pb">
+<p class="lead">Quatorze composants couvrent l'ensemble du site AgriWin Togo. Chacun est
+documenté dans le design system, avec ses propriétés, ses états et un aperçu vivant.</p>
+<div class="comps"><div class='comp'><strong>Button</strong><span>Six variantes, deux tailles. Une seule action or par écran.</span></div><div class='comp'><strong>Eyebrow</strong><span>Surtitre en pastille green-100, texte green-900.</span></div><div class='comp'><strong>SectionHead</strong><span>Surtitre, titre, mot d'accent Playfair, chapô.</span></div><div class='comp'><strong>Card</strong><span>Carte de base : bordure border-soft, rayon radius-lg.</span></div><div class='comp'><strong>ServiceCard</strong><span>Pictogramme en dégradé, titre, promesse, lien.</span></div><div class='comp'><strong>ValueCard</strong><span>Valeur de marque, centrée sur green-50.</span></div><div class='comp'><strong>ProductCard</strong><span>Entrée de catalogue : visuel, badge, prix, deux actions.</span></div><div class='comp'><strong>StatBand</strong><span>Chiffres clés en gold-500 sur dégradé vert.</span></div><div class='comp'><strong>CtaBand</strong><span>Bandeau de fin de page, un seul par page.</span></div><div class='comp'><strong>Field</strong><span>Libellé au-dessus, aide ou erreur en dessous.</span></div><div class='comp'><strong>FilterChip</strong><span>Filtre du catalogue, état porté par aria-pressed.</span></div><div class='comp'><strong>ContactCard</strong><span>Coordonnées sur aplat green-950.</span></div><div class='comp'><strong>StepList</strong><span>Étapes numérotées — uniquement pour une vraie séquence.</span></div><div class='comp'><strong>Brand</strong><span>Symbole, nom, signature, sur fond clair ou sombre.</span></div></div>
+<div class="demo-strip">
+  <div class="d-btn d-primary">Demander un devis</div>
+  <div class="d-btn d-green">Voir le catalogue</div>
+  <div class="d-btn d-outline">En savoir plus</div>
+  <div class="d-eyebrow">NOTRE ENGAGEMENT</div>
+  <div class="d-tag">Pépinière</div>
+  <div class="d-chip d-chip-on">Fruitiers</div>
+  <div class="d-chip">Forestiers</div>
+  <div class="d-badge">NOUVEAU</div>
+</div>
+<p class="foot-note">Les composants vivent dans le design system, pas dans ce document :
+c'est là qu'ils sont à jour, avec leur code et leurs règles d'usage.</p></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>20</span><h2>Papeterie</h2></div>
+    <span class="ph-num">22 / 25</span>
+  </header>
+  <div class="pb">
+<div class="stationery">
+  <figure>
+    <div class="biz">
+      <div class="biz-front">
+        <img src="assets/agriwin-logo-principal.svg" style="height:26mm">
+      </div>
+      <div class="biz-back">
+        <div class="biz-name">KEGNON Emmanuel</div>
+        <div class="biz-role">Fondateur &amp; CEO</div>
+        <div class="biz-lines">
+          <span>+228 96 63 82 00</span>
+          <span>agriwintogo@gmail.com</span>
+          <span>Kégué, Togo</span>
+        </div>
+        <img src="assets/agriwin-logo-horizontal.svg" class="biz-logo">
+      </div>
+    </div>
+    <figcaption><strong>Carte de visite — 85 × 55 mm</strong>Recto : logo vertical centré sur
+    blanc, ou en inversé sur green-900. Verso : nom en Poppins 700, fonction en ink-500,
+    coordonnées en Inter 8 pt.</figcaption>
+  </figure>
+  <figure>
+    <div class="letter">
+      <img src="assets/agriwin-logo-horizontal.svg" class="letter-logo">
+      <div class="letter-lines">
+        <span class="l-long"></span><span class="l-long"></span><span class="l-mid"></span>
+        <span class="l-long"></span><span class="l-long"></span><span class="l-short"></span>
+        <span class="l-long"></span><span class="l-mid"></span>
+      </div>
+      <div class="letter-foot">AgriWin Togo · Kégué, Togo · +228 96 63 82 00 · agriwintogo@gmail.com</div>
+    </div>
+    <figcaption><strong>En-tête A4</strong>Logo horizontal en haut à gauche, à 18 mm des
+    bords. Filet gold-500 de 2 mm au pied. Coordonnées en caption ink-500, centrées.</figcaption>
+  </figure>
+  <figure>
+    <div class="sig">
+      <img src="assets/agriwin-logo-horizontal.svg">
+      <div>
+        <strong>KEGNON Emmanuel</strong>
+        <em>Fondateur &amp; CEO — AgriWin Togo</em>
+        <span>+228 96 63 82 00 · agriwintogo@gmail.com</span>
+        <span class="sig-tag">Votre partenaire agricole&nbsp;!</span>
+      </div>
+    </div>
+    <figcaption><strong>Signature d'e-mail</strong>Logo à 120 px de large, nom en Poppins 600,
+    fonction en Playfair italique, coordonnées en 12 px ink-700. Pas d'image de fond, pas de
+    citation ajoutée.</figcaption>
+  </figure>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>21</span><h2>Supports de terrain</h2></div>
+    <span class="ph-num">23 / 25</span>
+  </header>
+  <div class="pb">
+<div class="field-kit">
+  <figure>
+    <div class="signboard">
+      <img src="assets/agriwin-logo-inverse.svg" style="width:100%">
+      <div class="sb-body">
+        <strong>Pépinière de Kégué</strong>
+        <span>Plants tropicaux · Conseil · Formation</span>
+        <span class="sb-tel">+228 96 63 82 00</span>
+      </div>
+    </div>
+    <figcaption><strong>Panneau de pépinière</strong>Version inversée en haut, aplat
+    green-900 sur toute la surface, numéro en gold-400 lisible à dix mètres. Hauteur de
+    caractère minimale du numéro : un vingtième de la largeur du panneau.</figcaption>
+  </figure>
+  <figure>
+    <div class="plant-tag">
+      <img src="assets/agriwin-icone.svg" style="height:14mm">
+      <strong>Manguier greffé</strong>
+      <span>Variété Kent · Sachet 3 L</span>
+      <span class="pt-lot">Lot 2026-04 · Kégué</span>
+    </div>
+    <figcaption><strong>Étiquette de plant</strong>45 × 90 mm, symbole seul en haut, espèce
+    en Poppins 600, variété et contenant en caption. Le numéro de lot rend le plant
+    traçable : il est obligatoire.</figcaption>
+  </figure>
+  <figure>
+    <div class="shirt">
+      <div class="shirt-body"><span class="shirt-collar"></span><img src="assets/agriwin-logo-inverse.svg" style="width:56%"></div>
+    </div>
+    <figcaption><strong>Tenue d'équipe</strong>Polo vert green-900, logo inversé brodé à
+    gauche de la poitrine, 70 mm de large. Dos : symbole seul en blanc, 180 mm. Pas de
+    slogan supplémentaire.</figcaption>
+  </figure>
+  <figure>
+    <div class="van">
+      <div class="van-body">
+        <img src="assets/agriwin-logo-horizontal.svg" style="width:58%">
+        <span class="van-tel">+228 96 63 82 00 · agriwintogo@gmail.com</span>
+      </div>
+      <div class="van-wheel w1"></div><div class="van-wheel w2"></div>
+    </div>
+    <figcaption><strong>Véhicule</strong>Portière blanche : logo horizontal, coordonnées en
+    dessous. Sur une carrosserie verte, version inversée. La zone de protection s'applique
+    aussi aux poignées et aux joints.</figcaption>
+  </figure>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>22</span><h2>Digital et réseaux sociaux</h2></div>
+    <span class="ph-num">24 / 25</span>
+  </header>
+  <div class="pb">
+<div class="two two-wide-left">
+  <div>
+    <div class="social">
+      <figure>
+        <div class="post">
+          <div class="post-media">
+            <span class="post-eyebrow">CATALOGUE</span>
+            <h3>Manguier greffé Kent</h3>
+            <span class="post-price">3 500 F <em>/ plant</em></span>
+          </div>
+          <div class="post-foot"><img src="assets/agriwin-monogramme.svg" style="height:9mm">
+          <span>@agriwintogo</span></div>
+        </div>
+        <figcaption><strong>Publication 1:1</strong>Aplat green-900, surtitre en pastille,
+        prix en gold-500. Monogramme et identifiant en pied.</figcaption>
+      </figure>
+      <figure>
+        <div class="cover-fb">
+          <img src="assets/agriwin-logo-inverse.svg" style="width:100%;height:100%;object-fit:cover">
+        </div>
+        <figcaption><strong>Couverture Facebook</strong>1640 × 624 px. Version inversée
+        centrée, zone de protection doublée sur les bords, rien dans le quart inférieur
+        gauche (photo de profil).</figcaption>
+      </figure>
+      <figure>
+        <div class="avatars">
+          <img src="assets/agriwin-monogramme.svg" style="width:22mm;border-radius:50%">
+          <img src="assets/agriwin-monogramme.svg" style="width:14mm;border-radius:50%">
+          <img src="assets/agriwin-monogramme.svg" style="width:9mm;border-radius:50%">
+        </div>
+        <figcaption><strong>Avatar</strong>Monogramme uniquement. Recadré en cercle par les
+        plateformes : le symbole est centré pour rester entier.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div>
+    <h3>Formats</h3>
+    <table class='kv'><thead><tr><th>Support</th><th>Dimensions</th></tr></thead><tbody><tr><th>Avatar</th><td>512 × 512 px — monogramme</td></tr><tr><th>Couverture Facebook</th><td>1640 × 624 px — version inversée</td></tr><tr><th>Publication carrée</th><td>1080 × 1080 px</td></tr><tr><th>Story / TikTok</th><td>1080 × 1920 px</td></tr><tr><th>Bannière de site</th><td>1920 × 1280 px, voile vert obligatoire</td></tr><tr><th>Favicon</th><td>16, 32 et 180 px — monogramme</td></tr></tbody></table>
+    <h3>Comptes officiels</h3>
+    <ul class="ticks">
+      <li>Facebook : facebook.com/agriwintogo</li>
+      <li>TikTok : @agriwintogo</li>
+      <li>WhatsApp : wa.me/22896638200</li>
+      <li>Site : agriwintogo.com</li>
+    </ul>
+    <h3>Règles de publication</h3>
+    <ul class="ticks">
+      <li>Une photo de terrain vaut mieux qu'une image de banque.</li>
+      <li>Un prix affiché est un prix tenu : il est daté dans la légende.</li>
+      <li>Un emoji au maximum par publication.</li>
+      <li>Le numéro apparaît en clair, pas seulement en lien.</li>
+    </ul>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+<section class="page">
+  <header class="ph">
+    <img src="assets/agriwin-logo-horizontal.svg" alt="">
+    <div class="ph-title"><span>23</span><h2>Gouvernance de la marque</h2></div>
+    <span class="ph-num">25 / 25</span>
+  </header>
+  <div class="pb">
+<div class="two">
+  <div>
+    <h3>Où se trouvent les fichiers</h3>
+    <p>La source de vérité est le <strong>design system AgriWin Togo</strong>, publié comme
+    artefact sur claude.ai. Il contient les 33 tokens,
+    les 14 composants avec leurs aperçus vivants, et les six fichiers de logo en SVG.</p>
+    <p>Ce brand book est une photographie de ce système à un instant donné. En cas de
+    divergence, <strong>le design system fait foi</strong>.</p>
+    <table class='kv'><thead><tr><th>Élément</th><th>Emplacement</th></tr></thead><tbody><tr><th>Tokens</th><td>tokens.json — couleurs, typographie, espacement, rayons, ombres</td></tr><tr><th>Composants</th><td>14 fiches, chacune avec propriétés, états et aperçu</td></tr><tr><th>Logos</th><td>6 fichiers SVG dans le groupe d'assets Logos</td></tr><tr><th>Règles d'écriture</th><td>README du design system</td></tr></tbody></table>
+  </div>
+  <div>
+    <h3>Qui décide quoi</h3>
+    <table class='kv'><thead><tr><th>Décision</th><th>Qui</th></tr></thead><tbody><tr><th>Nom, signature, valeurs</th><td>Direction — aucune modification sans décision formelle</td></tr><tr><th>Logo et déclinaisons</th><td>Direction, sur proposition du responsable communication</td></tr><tr><th>Palette et typographie</th><td>Responsable communication, dans les limites de ce document</td></tr><tr><th>Nouveau composant</th><td>Responsable communication + intégrateur, ajouté au design system</td></tr><tr><th>Supports courants</th><td>Toute personne, en appliquant ce document</td></tr></tbody></table>
+    <h3>Avant de diffuser un support</h3>
+    <ul class="ticks">
+      <li>Le logo vient-il d'un fichier du design system, et non d'une capture d'écran ?</li>
+      <li>La zone de protection est-elle respectée ?</li>
+      <li>Les trois polices sont-elles utilisées dans leurs rôles ?</li>
+      <li>Le texte atteint-il 4.5:1 sur son fond ?</li>
+      <li>L'or reste-t-il sous un dixième de la surface colorée ?</li>
+      <li>Chaque promesse chiffrée est-elle vérifiable ?</li>
+    </ul>
+    <div class="contact-final">
+      <strong>AgriWin Togo</strong>
+      <span>Kégué, Togo · +228 96 63 82 00 · agriwintogo@gmail.com</span>
+      <span>Lun–Sam : 8h – 18h · agriwintogo.com</span>
+    </div>
+  </div>
+</div></div>
+  <footer class="pf"><span>AgriWin Togo — Charte de marque 1.0</span>
+  <span>Votre partenaire agricole&nbsp;!</span></footer>
+</section>
+</body></html>

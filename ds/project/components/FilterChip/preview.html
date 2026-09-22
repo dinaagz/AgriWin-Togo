@@ -1,0 +1,14 @@
+<!-- @dsCard group="Formulaire" height=132 subtitle="Filtres du catalogue" -->
+<div class="aw-root" id="root" style="padding:24px;"></div>
+<script>
+(function () {
+  var A = window.AgriWin, r = document.getElementById("root");
+  var row = document.createElement("div");
+  row.style.cssText = "display:flex;flex-wrap:wrap;gap:8px";
+  [["Tous", true], ["Fruitiers", false], ["Forestiers", false], ["Agrumes", false],
+   ["Médicinaux", false], ["Élevage", false]].forEach(function (c) {
+    row.appendChild(A.FilterChip({ label: c[0], active: c[1] }));
+  });
+  r.appendChild(row);
+})();
+</script>

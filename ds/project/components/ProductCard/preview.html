@@ -1,0 +1,18 @@
+<!-- @dsCard group="Contenu" height=400 subtitle="Trois plants du catalogue" -->
+<div class="aw-root" id="root" style="padding:24px;"></div>
+<script>
+(function () {
+  var A = window.AgriWin, r = document.getElementById("root");
+  var g = document.createElement("div");
+  g.style.cssText = "display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px";
+  [["Manguier greffé","Kent et Keitt, en sachet de 3 L.","3 500 F","/ plant","Nouveau"],
+   ["Avocatier Hass","Greffé, entrée en production à 3 ans.","5 000 F","/ plant",null],
+   ["Teck (Tectona grandis)","Plant forestier, reboisement et bois d'œuvre.","800 F","/ plant","Volume"]
+  ].forEach(function (p) {
+    g.appendChild(A.ProductCard({
+      tag: "Pépinière", title: p[0], text: p[1], price: p[2], unit: p[3], badge: p[4]
+    }));
+  });
+  r.appendChild(g);
+})();
+</script>
