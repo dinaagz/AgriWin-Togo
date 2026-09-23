@@ -45,6 +45,15 @@ d'hébergeur.
 > Si le build échoue quand même, vérifier dans *Build settings* que le
 > *Framework preset* est bien **None** et que *Build command* est vide —
 > un preset auto-détecté peut l'écraser.
+>
+> **Si le déploiement échoue avec `Missing entry-point to Worker script or
+> to assets directory`** : le projet Cloudflare a été créé comme un
+> **Worker** (nouveau modèle unifié Workers/Pages) plutôt qu'un Pages
+> classique — sa *Deploy command* est alors `npx wrangler deploy`, pas
+> `npx wrangler pages deploy`. `wrangler.toml` gère déjà ce cas (`[assets]
+> directory = "./site"`), donc un nouveau déploiement doit suffire. Pour
+> repasser en Pages classique : dans les réglages du projet, *Settings* →
+> *Build* → changer la *Deploy command* en `npx wrangler pages deploy site`.
 
 **En ligne de commande** :
 ```bash
