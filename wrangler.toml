@@ -1,0 +1,7 @@
+# Config Cloudflare Pages — déploiement du dossier site/ tel quel (pas de build).
+# CLI : npx wrangler pages deploy site --project-name=agriwin-togo
+# Ou via le tableau de bord Cloudflare Pages en connectant ce dépôt Git
+# (racine de build "site", pas de commande de build, sortie = site).
+name = "agriwin-togo"
+pages_build_output_dir = "site"
+compatibility_date = "2026-09-23"
