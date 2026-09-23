@@ -228,3 +228,32 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
+
+## Impeccable — Design Guidance Skill
+
+**Repo source:** https://github.com/pbakaus/impeccable.git
+
+Impeccable est une skill Claude pour le design frontend (UX/UI). Elle enrichit la compétence `frontend-design` d'Anthropic avec :
+
+- **24 commandes** : `craft`, `shape`, `init`, `critique`, `audit`, `polish`, `bolder`, `quieter`, etc.
+- **61 règles déterministes** de détection de patterns courants en design IA (gradients bleu-violet, cartes imbriquées, etc.)
+- **Contexte durable** : `/impeccable init` capture la vérité produit dans `PRODUCT.md` et `DESIGN.md`
+
+### Installation
+
+La skill est installée dans `.claude/skills/impeccable/`. Utilisation :
+
+```
+/impeccable <commande> [cible]
+```
+
+**Première utilisation :** `/impeccable init` sur le projet pour capturer le contexte produit.
+
+### Modes de visite
+
+- **Persuade** : landing pages, marketing (design est le produit)
+- **Operate** : app UI, dashboards, tools (tâche complétée)
+- **Read** : docs, articles, guides (compréhension)
+- **Experience** : portfolios, showcases (l'interface recède)
+
+Voir [DESIGN.md](brand/ds/project/design-system.json) et `PRODUCT.md` pour la configuration du projet.
