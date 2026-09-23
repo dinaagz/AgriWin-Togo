@@ -97,6 +97,11 @@
       var img = el("img");
       img.src = o.media;
       img.alt = o.mediaAlt || "";
+      // Différé par défaut : un catalogue peut compter des dizaines de
+      // cartes. Passer eagerMedia:true pour une carte visible d'entrée
+      // (première ligne d'un catalogue, carte de hero).
+      img.loading = o.eagerMedia ? "eager" : "lazy";
+      img.decoding = "async";
       m.appendChild(img);
       if (o.badge) m.appendChild(el("span", "aw-product__badge", o.badge));
       n.appendChild(m);
@@ -153,7 +158,7 @@
     return Card({
       media: o.media, mediaAlt: o.title, badge: o.badge, tag: o.tag,
       title: o.title, text: o.text, className: "aw-product",
-      children: [price, actions]
+      eagerMedia: o.eagerMedia, children: [price, actions]
     });
   }
 
@@ -167,7 +172,7 @@
       s.appendChild(el("span", null, it.label));
       n.appendChild(s);
     });
-    n.style.gridTemplateColumns = "repeat(" + ((o.items || []).length || 4) + ", 1fr)";
+    n.style.setProperty("--aw-stat-count", (o.items || []).length || 4);
     return n;
   }
 
@@ -208,10 +213,25 @@
     if (o.value) c.value = o.value;
     if (o.disabled) c.disabled = true;
     if (o.required) { c.required = true; l.appendChild(el("span", null, " *")); }
-    if (o.error) c.setAttribute("aria-invalid", "true");
     n.appendChild(c);
-    if (o.error) n.appendChild(el("span", "aw-field__error", o.error));
-    else if (o.note) n.appendChild(el("span", "aw-field__note", o.note));
+    // L'aide et l'erreur sont liées au contrôle par aria-describedby : un
+    // lecteur d'écran doit entendre pourquoi un champ est invalide, pas
+    // seulement qu'il l'est.
+    if (o.error) {
+      var errId = id + "-error";
+      c.setAttribute("aria-invalid", "true");
+      c.setAttribute("aria-describedby", errId);
+      var errEl = el("span", "aw-field__error", o.error);
+      errEl.id = errId;
+      errEl.setAttribute("role", "alert");
+      n.appendChild(errEl);
+    } else if (o.note) {
+      var noteId = id + "-note";
+      c.setAttribute("aria-describedby", noteId);
+      var noteEl = el("span", "aw-field__note", o.note);
+      noteEl.id = noteId;
+      n.appendChild(noteEl);
+    }
     return n;
   }
 
@@ -251,10 +271,15 @@
   /** Liste d'étapes numérotées. */
   function StepList(o) {
     o = o || {};
-    var n = el("div", "aw-steps");
+    // <ol> : un lecteur d'écran annonce nativement « étape 2 sur 4 ». Le
+    // cercle numéroté reste, mais en décor (aria-hidden) puisque la liste
+    // porte déjà le numéro.
+    var n = el("ol", "aw-steps");
     (o.steps || []).forEach(function (s, i) {
-      var row = el("div", "aw-step");
-      row.appendChild(el("div", "aw-step__num", String(i + 1)));
+      var row = el("li", "aw-step");
+      var num = el("div", "aw-step__num", String(i + 1));
+      num.setAttribute("aria-hidden", "true");
+      row.appendChild(num);
       var box = el("div");
       box.appendChild(el("h3", null, s.title));
       box.appendChild(el("p", null, s.text));
