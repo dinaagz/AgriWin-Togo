@@ -7,13 +7,42 @@ commentaires, les livrables et les échanges.
 
 | Dossier | Rôle |
 | --- | --- |
-| `logo/` | Le symbole vectorisé et les six variantes du logo, en SVG et PNG |
-| `logo/source/` | L'image du logo fournie par le client — **source de vérité du symbole** |
-| `brandbook/` | Le brand book A3 paysage : générateur Python, CSS, tokens, assets |
+| `logo/` | Le symbole vectorisé et les six variantes du logo, en SVG et PNG — **source de vérité des fichiers de logo** |
+| `logo/source/` | L'image du logo fournie par le client — source de vérité du *symbole* |
+| `logo/_previous/` | La version du logo rejetée par le client — témoin de la porte L2, ne pas supprimer |
+| `brandbook/assets/` | Copie de travail des six SVG de `logo/`, lue par `build_brandbook.py` en chemins relatifs |
+| `brandbook/` | Le brand book A3 paysage : générateur Python, CSS, tokens |
 | `ds/project/` | Le contenu du design system publié comme artefact claude.ai |
-| `scripts/` | Génération, rendu et **vérificateurs** de tous les livrables |
-| `out/` | Livrables produits (PDF, PPTX, archive des logos) |
+| `scripts/` | Génération, rendu et **vérificateurs** de tous les livrables — *voir « État du dépôt » ci-dessous* |
+| `out/` | Livrables produits : PDF, PPTX, et une archive des logos (copie figée de `logo/` au moment de la livraison) |
 | `GATES.md`, `GATES-LOGO.md` | Registres de portes de contrôle (voir plus bas) |
+
+Les six SVG du logo existent donc à trois endroits (`logo/`, `brandbook/assets/`,
+`out/logos/`) : ce n'est pas une dérive, chacun sert un rôle différent
+(source, entrée du générateur, archive livrée). Après toute modification de
+`logo/`, les deux copies doivent être resynchronisées à la main tant que
+`scripts/` est absent — voir « État du dépôt ».
+
+`brandbook/tokens.json` et `ds/project/tokens.json` portent les mêmes valeurs
+dans deux schémas différents (l'un plat pour le générateur du brand book,
+l'autre en tableau pour l'artefact design system) : une différence de forme
+entre les deux fichiers est normale, une différence de valeur ne l'est pas.
+
+## État du dépôt
+
+Ce dépôt tel que livré ne contient **pas** de dossier `scripts/`, alors que la
+« Chaîne de génération » ci-dessous et les deux registres de portes
+(`GATES.md`, `GATES-LOGO.md`) le référencent partout : `trace_symbol.py`,
+`rasterize.py`, `build_tokens.py`, `build_ds_tokens.py`,
+`build_ds_components.py`, `render_pdf.py`, `build_pptx.py`, et tous les
+vérificateurs `check_*.py` / `check-*.mjs`. Les cases cochées de `GATES.md` et
+`GATES-LOGO.md` sont les preuves qu'ils ont tourné avec succès sur un autre
+poste (`cwd=/home/claude/agriwin` dans leurs preuves) ; elles ne peuvent pas
+être rejouées depuis ce checkout tant que `scripts/` n'y est pas restauré.
+`logo/`, `brandbook/`, `ds/project/` et `out/` contiennent donc les
+**derniers livrables générés**, pas une chaîne reproductible sur cette
+machine. Restaurer `scripts/` (depuis une sauvegarde ou en le reconstruisant)
+est un préalable à toute nouvelle génération ou vérification de porte.
 
 ## Règles de travail sur ce projet
 
