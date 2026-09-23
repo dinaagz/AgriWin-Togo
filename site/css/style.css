@@ -802,3 +802,396 @@ input, textarea, select { font-family: inherit; }
   .card:hover .card-media img,
   .mood-item:hover img { transform: none; }
 }
+
+/* =========================================================
+   MODERNISATION — typographie fluide, interactions, responsive
+   Ajouts non destructifs : n'écrase pas les tokens existants,
+   affine et polit ce qui l'entoure.
+   ========================================================= */
+
+:root {
+  /* Espacements fluides — s'adaptent à la largeur d'écran */
+  --space-3xs: clamp(4px, 0.4vw, 6px);
+  --space-2xs: clamp(8px, 0.8vw, 12px);
+  --space-xs:  clamp(12px, 1.2vw, 16px);
+  --space-sm:  clamp(16px, 1.8vw, 22px);
+  --space-md:  clamp(24px, 2.6vw, 34px);
+  --space-lg:  clamp(36px, 4vw, 56px);
+  --space-xl:  clamp(56px, 6vw, 88px);
+  --space-2xl: clamp(80px, 8vw, 128px);
+
+  /* Easings */
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --ease-back: cubic-bezier(.34, 1.56, .64, 1);
+
+  /* Ombres teintées de la couleur de marque */
+  --shadow-glow: 0 20px 60px -20px rgba(46, 125, 50, 0.45);
+  --shadow-gold: 0 20px 50px -20px rgba(201, 138, 43, 0.5);
+}
+
+/* Focus visible plus lisible et cohérent partout */
+:where(a, button, input, textarea, select, .filter-chip, .fab):focus-visible {
+  outline: 2px solid var(--green-500);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Sélection texte */
+::selection { background: var(--green-100); color: var(--green-950); }
+
+/* ---------- Barre de progression de lecture ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--green-600), var(--gold-500));
+  z-index: 400;
+  transition: width .1s linear;
+  pointer-events: none;
+}
+
+/* ---------- Typographie fluide affinée ---------- */
+h1 { font-size: clamp(30px, 4.6vw, 52px); letter-spacing: -0.02em; }
+h2 { font-size: clamp(24px, 3.2vw, 36px); letter-spacing: -0.015em; }
+h3 { font-size: clamp(17px, 1.6vw, 20px); letter-spacing: -0.01em; }
+p  { font-size: clamp(15px, 1.05vw, 16.5px); }
+.lead { font-size: clamp(16.5px, 1.3vw, 19px); line-height: 1.55; }
+
+/* Sections avec espacement fluide */
+.section { padding: var(--space-xl) 0; }
+.section-sm { padding: var(--space-lg) 0; }
+
+/* ---------- Boutons : interaction raffinée ---------- */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s var(--ease-out), box-shadow .3s var(--ease-out),
+              background .25s ease, color .25s ease, border-color .25s ease;
+  will-change: transform;
+}
+.btn::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.25) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform .6s var(--ease-out);
+  pointer-events: none;
+}
+.btn:hover::before { transform: translateX(100%); }
+.btn:hover { transform: translateY(-2px); }
+.btn-primary:hover { box-shadow: var(--shadow-gold); }
+.btn-green:hover, .btn-whatsapp:hover { box-shadow: var(--shadow-glow); }
+
+/* ---------- En-tête : polish sur scroll ---------- */
+.site-header {
+  transition: box-shadow .3s ease, background .3s ease, backdrop-filter .3s ease;
+}
+.site-header.is-scrolled {
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(14px) saturate(1.1);
+  box-shadow: 0 4px 20px -8px rgba(15,61,23,.15);
+}
+
+.main-nav a {
+  position: relative;
+}
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 14px; right: 14px; bottom: 4px;
+  height: 2px;
+  background: var(--green-700);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .3s var(--ease-out);
+}
+.main-nav a:hover::after,
+.main-nav a.active::after { transform: scaleX(1); }
+.main-nav a.active { background: transparent; }
+
+/* Toggle mobile : hover subtil */
+.nav-toggle { transition: background .2s ease, transform .2s ease; }
+.nav-toggle:hover { background: var(--green-200, var(--green-100)); transform: scale(1.05); }
+
+/* ---------- Hero : effet parallaxe léger + halo ---------- */
+.photo-hero img {
+  transform: scale(1.05);
+  transition: transform 12s var(--ease-out);
+  will-change: transform;
+}
+.photo-hero.is-visible img { transform: scale(1); }
+
+.photo-hero::before {
+  content: "";
+  position: absolute;
+  top: -20%; left: -10%;
+  width: 60%; height: 80%;
+  background: radial-gradient(ellipse at center, rgba(224, 168, 61, 0.18), transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.photo-hero .container > * {
+  animation: heroFadeUp 0.9s var(--ease-out) both;
+}
+.photo-hero .container > *:nth-child(2) { animation-delay: 0.12s; }
+.photo-hero .container > *:nth-child(3) { animation-delay: 0.22s; }
+.photo-hero .container > *:nth-child(4) { animation-delay: 0.32s; }
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Cartes : lift & glow subtils ---------- */
+.card {
+  transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out),
+              border-color .35s ease;
+  position: relative;
+}
+.card::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 1.5px;
+  background: linear-gradient(135deg, var(--green-500), var(--gold-500));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+.card:hover::after { opacity: 1; }
+.card-media img { transition: transform .7s var(--ease-out); }
+.card:hover .card-media img { transform: scale(1.08); }
+
+/* Fiches produits : bouton commande plus vivant */
+.product-actions .btn-whatsapp { position: relative; }
+.product-actions .btn-whatsapp:hover { transform: translateY(-2px) scale(1.02); }
+
+/* ---------- Filtres catalogue : plus tactiles ---------- */
+.filter-chip {
+  transition: background .25s ease, color .25s ease, border-color .25s ease,
+              transform .2s var(--ease-out), box-shadow .25s ease;
+}
+.filter-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+  color: var(--green-800);
+}
+.filter-chip.active {
+  box-shadow: var(--shadow-sm);
+}
+
+.search-box svg { transition: color .2s ease; }
+.search-box input:focus + svg,
+.search-box:focus-within svg { color: var(--green-700); }
+
+/* ---------- Cartes photo services : overlay animé ---------- */
+.service-photo-card {
+  transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
+}
+.service-photo-card img { transition: transform .8s var(--ease-out); }
+.service-photo-card:hover img { transform: scale(1.06); }
+.service-photo-card::after {
+  transition: background .4s ease;
+}
+.service-photo-card:hover::after {
+  background: linear-gradient(180deg, rgba(9,33,12,.15) 20%, rgba(9,33,12,.92) 100%);
+}
+.service-photo-card:hover { box-shadow: var(--shadow-lg); }
+
+/* Icon service : léger flottement au hover */
+.service-icon { transition: transform .3s var(--ease-back), box-shadow .3s ease; }
+.service-card:hover .service-icon,
+.value-card:hover .service-icon {
+  transform: translateY(-3px) rotate(-3deg);
+  box-shadow: var(--shadow-md);
+}
+.value-card { transition: transform .3s var(--ease-out), box-shadow .3s ease, border-color .3s ease; }
+.value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); border-color: var(--green-400); }
+
+/* ---------- CTA band avec motif animé ---------- */
+.cta-band::before {
+  content: "";
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(224,168,61,.2), transparent 65%);
+  animation: ctaFloat 12s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes ctaFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-40px, 30px); }
+}
+
+/* ---------- Éléments révélés au scroll ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal[data-delay="1"] { transition-delay: .08s; }
+.reveal[data-delay="2"] { transition-delay: .16s; }
+.reveal[data-delay="3"] { transition-delay: .24s; }
+.reveal[data-delay="4"] { transition-delay: .32s; }
+.reveal[data-delay="5"] { transition-delay: .40s; }
+.reveal[data-delay="6"] { transition-delay: .48s; }
+
+/* ---------- Menu mobile : détail interactif ---------- */
+.mobile-nav {
+  backdrop-filter: blur(0);
+  transition: opacity .35s var(--ease-out), backdrop-filter .35s ease;
+}
+.mobile-nav.open { backdrop-filter: blur(6px); background: rgba(15,61,23,.62); }
+.mobile-nav-panel {
+  transition: transform .4s var(--ease-out);
+  border-top-left-radius: var(--radius-lg);
+  border-bottom-left-radius: var(--radius-lg);
+  overflow-y: auto;
+}
+.mobile-nav-panel a {
+  transition: background .2s ease, color .2s ease, transform .2s var(--ease-out), padding-left .25s ease;
+}
+.mobile-nav-panel a:hover { background: var(--green-50); color: var(--green-700); padding-left: 16px; }
+.mobile-nav-panel a.active { background: var(--green-100); }
+
+/* ---------- Formulaires : effet float label subtil ---------- */
+.form-field input,
+.form-field select,
+.form-field textarea {
+  transition: border-color .25s ease, background .25s ease, box-shadow .25s ease, transform .2s var(--ease-out);
+}
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover { border-color: var(--green-400); }
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  box-shadow: 0 0 0 4px rgba(46,125,50,.12);
+}
+
+/* ---------- FAB : animation d'arrivée + pulse WhatsApp ---------- */
+.fab-stack { gap: 14px; }
+.fab {
+  transition: transform .3s var(--ease-back), box-shadow .3s ease;
+}
+.fab:hover { transform: scale(1.12) rotate(-4deg); box-shadow: var(--shadow-lg); }
+.fab-whatsapp::before {
+  content: "";
+  position: absolute; inset: -6px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  opacity: .3;
+  z-index: -1;
+  animation: fabPulse 2.2s ease-out infinite;
+}
+.fab-whatsapp { position: relative; z-index: 1; }
+@keyframes fabPulse {
+  0%   { transform: scale(.95); opacity: .35; }
+  70%  { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+/* ---------- Top-bar : liens plus interactifs ---------- */
+.top-bar-links a { transition: color .2s ease; }
+.top-bar-links a:hover { color: var(--gold-400); }
+.top-bar-social a { transition: background .25s ease, transform .25s var(--ease-back); }
+.top-bar-social a:hover { transform: translateY(-2px); }
+
+/* ---------- Footer : liens plus vivants ---------- */
+.footer-col a {
+  position: relative;
+  padding-left: 0;
+  transition: color .2s ease, padding-left .25s var(--ease-out);
+}
+.footer-col a::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity .25s ease, transform .25s var(--ease-out);
+  color: var(--gold-400);
+}
+.footer-col a:hover { padding-left: 16px; color: var(--gold-400); }
+.footer-col a:hover::before { opacity: 1; transform: translateX(0); }
+
+/* ---------- Grilles : gap fluide ---------- */
+.grid { gap: var(--space-md); }
+.form-grid { gap: var(--space-sm); }
+
+/* ---------- Meilleure gestion des colonnes intermédiaires ---------- */
+@media (min-width: 1025px) and (max-width: 1180px) {
+  .grid-4 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- Ajustements mobiles avancés ---------- */
+@media (max-width: 900px) {
+  .cta-band { padding: 40px 26px; }
+  .portrait-quote { padding: 26px; gap: 24px; }
+  .contact-info-card { padding: 26px; }
+}
+
+@media (max-width: 620px) {
+  .container { padding: 0 16px; }
+  .top-bar { font-size: 12px; }
+  .top-bar .container { padding-top: 6px; padding-bottom: 6px; }
+  .top-bar-links { gap: 12px; }
+  .brand img { height: 44px; }
+  .brand-text strong { font-size: 17px; }
+  .brand-text span { font-size: 11px; }
+  .site-header .container { height: 68px; }
+  :root { --header-h: 68px; }
+  .btn { padding: 12px 20px; font-size: 14.5px; }
+  .btn-sm { padding: 9px 15px; font-size: 13px; }
+  .card-body { padding: 18px; }
+  .section-head { margin-bottom: 28px; }
+  .cta-band { padding: 32px 22px; border-radius: var(--radius-md); }
+  .cta-band h2 { font-size: 22px; }
+  .fab-stack { right: 14px; bottom: 14px; gap: 10px; }
+  .fab { width: 52px; height: 52px; }
+  .fab svg { width: 24px; height: 24px; }
+  .fab-top { width: 40px; height: 40px; }
+  .contact-info-card { padding: 22px; }
+  .mobile-nav-panel { width: min(340px, 92vw); padding: 20px; }
+  .hero-stats strong { font-size: 24px; }
+  .photo-hero .container { padding-bottom: 40px; }
+}
+
+/* iOS safe area (encoche) */
+@supports (padding: max(0px)) {
+  .site-header, .top-bar, .container {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+  .fab-stack {
+    right: max(14px, env(safe-area-inset-right));
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Respect motion-reduce pour toutes les nouvelles animations */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .photo-hero img, .photo-hero .container > * { animation: none !important; transform: none !important; }
+  .cta-band::before, .fab-whatsapp::before { animation: none !important; }
+  .btn::before { display: none; }
+  .btn:hover, .card:hover, .value-card:hover, .service-photo-card:hover,
+  .top-bar-social a:hover, .fab:hover { transform: none !important; }
+}
