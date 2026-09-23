@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Site AgriWin Togo — HTML/CSS/JS statique, à servir depuis site/.",
   "scripts": {
+    "build": "echo 'Site statique — rien à construire, site/ est servi tel quel.'",
     "dev": "npx serve site",
     "deploy:cloudflare": "npx wrangler pages deploy site --project-name=agriwin-togo"
   }

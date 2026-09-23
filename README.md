@@ -30,8 +30,21 @@ d'hébergeur.
 
 **Par le tableau de bord** (le plus simple) :
 1. [dash.cloudflare.com](https://dash.cloudflare.com) → Workers & Pages → *Create* → *Pages* → *Connect to Git* → ce dépôt.
-2. Racine de build : `/` — commande de build : *(aucune)* — dossier de sortie : `site`.
+2. Dans *Build settings*, renseigner exactement :
+   - Framework preset : **None**
+   - Build command : *(laisser vide)*
+   - Build output directory : **site**
+   - Root directory : `/`
 3. Chaque push sur `main` redéploie automatiquement.
+
+> **Si le build échoue** : Cloudflare Pages détecte un `package.json` à la
+> racine et lance `npm ci` puis, selon le preset choisi, `npm run build` —
+> deux échecs classiques sur un site 100 % statique : `npm ci` sans
+> `package-lock.json` commité, ou un script `build` absent. Les deux sont
+> réglés dans ce dépôt (`package-lock.json` commité, script `build` no-op).
+> Si le build échoue quand même, vérifier dans *Build settings* que le
+> *Framework preset* est bien **None** et que *Build command* est vide —
+> un preset auto-détecté peut l'écraser.
 
 **En ligne de commande** :
 ```bash
