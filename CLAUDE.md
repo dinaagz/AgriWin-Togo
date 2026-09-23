@@ -13,7 +13,8 @@ commentaires, les livrables et les échanges.
 | `brand/logo/_previous/` | La version du logo rejetée par le client — témoin de la porte L2, ne pas supprimer |
 | `brand/brandbook/assets/` | Copie de travail des six SVG de `brand/logo/`, lue par `build_brandbook.py` en chemins relatifs |
 | `brand/brandbook/` | Le brand book A3 paysage : générateur Python, CSS, tokens |
-| `brand/ds/project/` | Le contenu du design system publié comme artefact claude.ai |
+| `brand/ds/project/` | Le contenu du design system publié comme artefact claude.ai — **source de vérité** du design system |
+| `design-system/` | Fiche de référence rapide (`MASTER.md`), générée par la skill Claude « design-system » puis corrigée pour reprendre les vraies couleurs/typographies du site au lieu de la palette générique produite par défaut. En cas de divergence avec `brand/ds/project/`, c'est ce dernier qui fait foi. |
 | `brand/scripts/` | Génération, rendu et **vérificateurs** de tous les livrables de marque — *voir « État du dépôt » ci-dessous* |
 | `brand/out/` | Livrables de marque produits : PDF, PPTX, et une archive des logos (copie figée de `brand/logo/` au moment de la livraison) |
 | `brand/GATES.md`, `brand/GATES-LOGO.md` | Registres de portes de contrôle (voir plus bas) |

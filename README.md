@@ -12,6 +12,7 @@ accompagnement en élevage. Tout le contenu est en français.
 | --- | --- |
 | `site/` | **Le site à déployer** — HTML/CSS/JS statique, aucune étape de build. C'est la racine à servir. |
 | `brand/` | Identité de marque : logo vectorisé, brand book A3, design system, livrables. Référence, pas déployé. |
+| `design-system/` | Fiche de référence rapide (`MASTER.md`) générée par la skill Claude « design-system » ; corrigée pour reprendre les vraies couleurs/typographies AgriWin. Le design system publié qui fait foi reste `brand/ds/project/`. |
 | `CLAUDE.md` | Règles de travail et documentation détaillée du projet. |
 | `wrangler.toml`, `vercel.json`, `package.json` | Configuration de déploiement (voir ci-dessous). |
 
