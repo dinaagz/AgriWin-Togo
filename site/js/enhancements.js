@@ -84,6 +84,49 @@
     document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("is-visible"); });
   }
 
+  /* ---------- Comptage animé des statistiques ---------- */
+  if ("IntersectionObserver" in window && !prefersReduced) {
+    var statEls = document.querySelectorAll(".stats-band .stat-item strong");
+    var statTargets = [];
+    Array.prototype.forEach.call(statEls, function (el) {
+      var match = el.textContent.match(/^(\d[\d\s]*)(.*)$/);
+      if (!match) return; // valeur non numérique (ex. "Togo") : pas d'animation
+      var value = parseInt(match[1].replace(/\s/g, ""), 10);
+      if (isNaN(value)) return;
+      el.dataset.suffix = match[2];
+      el.dataset.target = value;
+      el.textContent = "0" + match[2];
+      statTargets.push(el);
+    });
+
+    function animateCount(el) {
+      var target = parseInt(el.dataset.target, 10);
+      var suffix = el.dataset.suffix || "";
+      var duration = 1400;
+      var start = null;
+      function step(ts) {
+        if (start === null) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    if (statTargets.length) {
+      var statIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            statIo.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      statTargets.forEach(function (el) { statIo.observe(el); });
+    }
+  }
+
   /* ---------- Effet de survol "magnétique" léger sur les boutons principaux ---------- */
   if (!prefersReduced && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     var magnetic = document.querySelectorAll(".btn-primary, .btn-green, .btn-whatsapp");
