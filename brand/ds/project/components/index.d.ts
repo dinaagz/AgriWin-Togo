@@ -49,6 +49,9 @@ export interface CardProps {
   text?: string;
   children?: HTMLElement[];
   className?: string;
+  /** Charge l'image en `eager` plutôt qu'en `lazy` (défaut). À réserver aux
+   *  cartes visibles d'entrée : première ligne d'un catalogue, carte de hero. */
+  eagerMedia?: boolean;
 }
 
 export interface ServiceCardProps {
@@ -72,6 +75,8 @@ export interface ProductCardProps {
   badge?: string;
   primaryLabel?: string;
   secondaryLabel?: string;
+  /** Charge l'image en `eager` plutôt qu'en `lazy` (défaut). */
+  eagerMedia?: boolean;
 }
 
 export interface StatBandProps { items: Array<{ value: string; label: string }> }
