@@ -786,3 +786,19 @@ input, textarea, select { font-family: inherit; }
   .photo-hero { min-height: 92vh; }
   .photo-hero.hero-sm { min-height: 54vh; }
 }
+
+/* ---------- Préférence utilisateur : mouvement réduit ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card:hover,
+  .service-photo-card:hover,
+  .fab:hover,
+  .card:hover .card-media img,
+  .mood-item:hover img { transform: none; }
+}
