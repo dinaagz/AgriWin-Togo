@@ -38,8 +38,10 @@
       if (!btn) return;
       chipsWrap.querySelectorAll(".filter-chip").forEach(function (c) {
         c.classList.remove("active");
+        c.setAttribute("aria-pressed", "false");
       });
       btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
       state.category = btn.dataset.category;
       render();
     });

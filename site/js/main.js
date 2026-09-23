@@ -6,16 +6,29 @@
   var toggle = document.getElementById("navToggle");
   var closeBtn = document.getElementById("navClose");
   var mobileNav = document.getElementById("mobileNav");
+  var navIsOpen = false;
+
+  function focusableInNav() {
+    return mobileNav.querySelectorAll('a[href], button:not([disabled])');
+  }
 
   function openNav() {
     if (!mobileNav) return;
-    mobileNav.classList.add("open");
+    navIsOpen = true;
+    mobileNav.hidden = false;
+    requestAnimationFrame(function () { mobileNav.classList.add("open"); });
     document.body.style.overflow = "hidden";
+    if (toggle) toggle.setAttribute("aria-expanded", "true");
+    if (closeBtn) closeBtn.focus();
   }
   function closeNav() {
-    if (!mobileNav) return;
+    if (!mobileNav || !navIsOpen) return;
+    navIsOpen = false;
     mobileNav.classList.remove("open");
     document.body.style.overflow = "";
+    if (toggle) toggle.setAttribute("aria-expanded", "false");
+    window.setTimeout(function () { if (!navIsOpen) mobileNav.hidden = true; }, 300);
+    if (toggle) toggle.focus();
   }
   if (toggle) toggle.addEventListener("click", openNav);
   if (closeBtn) closeBtn.addEventListener("click", closeNav);
@@ -28,7 +41,21 @@
     });
   }
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeNav();
+    if (!navIsOpen) return;
+    if (e.key === "Escape") { closeNav(); return; }
+    if (e.key === "Tab") {
+      var focusable = focusableInNav();
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   });
 
   /* ---- Bouton "retour en haut" ---- */
